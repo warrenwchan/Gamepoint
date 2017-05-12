@@ -1,14 +1,14 @@
-import React from 'react';
+import { React, Components } from 'react';
 import styles from './styles.css'
 
-export default class BigContainer extends React.Component {
+export default class BigContainer extends Component {
 
 
 
   render() {
     return (
-      <div className="bigcontainer">
-          <div className="containerbanner">
+      <div className="bigContainer">
+          <div className="containerBanner">
               <h1>title</h1>
           </div>
       </div>
