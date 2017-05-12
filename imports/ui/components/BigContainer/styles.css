@@ -1,0 +1,22 @@
+.bigcontainer {
+    width: 1170px;
+    height: 800px;
+    border-radius: 15px;
+    background-color: #4D4D4D;
+}
+
+.containerbanner {
+    width: 1170px;
+    height: 150px;
+    background-color: #C14646;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-align: center;
+}
+
+h1 {
+    color: #F2F2F2;
+    font-family: 'uni_sans';
+    font-variant: small-caps;
+}
+
