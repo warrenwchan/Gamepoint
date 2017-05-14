@@ -1,10 +1,7 @@
-import { React, Components } from 'react';
+import React, { Component } from 'react';
 import styles from './styles.css'
 
 export default class BigContainer extends Component {
-
-
-
   render() {
     return (
       <div className="bigContainer">
