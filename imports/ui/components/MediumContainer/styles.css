@@ -1,0 +1,38 @@
+.medContainer {
+    width: 700px;
+    height: 550px;
+    border-radius: 15px;
+    background-color: #666666;
+    color: #F2F2F2;
+}
+
+.medContainerBanner {
+    width: 700px;
+    height: 100px;
+    background-color: #C14646;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.medTitle {
+    width: 50%;
+    padding-left: 50px;
+}
+
+.medTitle h1 {
+    font-family: sans-serif;
+    font-size: 3rem;
+    margin: 20px;
+}
+
+.medSubTitle {
+    width: 50%;
+}
+
+.medSubTitle h2 {
+    font-family: sans-serif;
+    font-size: 2rem;
+    margin: 25px;
+}
