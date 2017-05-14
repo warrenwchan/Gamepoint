@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import styles from './styles.css';
 
 const CategoryButton = ({ title }) => (
-  <div className="catButton">
+  <button className="catButton">
     <p>{title}</p>
-  </div>
+  </button>
 );
 
 export default CategoryButton;

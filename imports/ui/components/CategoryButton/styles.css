@@ -1,11 +1,16 @@
 .catButton {
-    width: 220px;
-    height: 220px;
+    width: 210px;
+    height: 210px;
     border-radius: 8px;
     color: white;
     background-color: #666666;
     display: flex;
     justify-content: center;
+    border: none;
+}
+.catButton:focus {
+    outline: 0;
+    border: 1px solid rgb(193, 70, 70);
 }
 
 .catButton p{
