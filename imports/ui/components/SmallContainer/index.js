@@ -1,15 +1,14 @@
 import React,{ Component } from 'react';
 import styles from './styles.css'
 
-export default class SmallContainer extends Component {
+const SmallContainer = ({title}) => (
+  <div className="smallContainer">
+    <div className="smallContainerBanner">
+      <h1>{title}</h1>
+    </div>
+    <div className="smallContent"></div>
+  </div>
+);
 
-  render() {
-    return (
-      <div className="smallContainer">
-          <div className="smallContainerBanner">
-              <h1>Title</h1>
-          </div>
-      </div>
-    );
-  }
-}
+export default SmallContainer;
+
