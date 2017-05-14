@@ -8,7 +8,7 @@ class DashBoard extends Component {
         return (
             <div className="dashBoardContain">
                 <DashDrawer />
-                <div className="mainApp"></div>
+                <div className="mainApp">{this.props.children}</div>
             </div>
         );
     }
