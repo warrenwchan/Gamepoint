@@ -1,14 +1,14 @@
-.bigContainer {
-    width: 1170px;
-    height: 800px;
+.smallContainer {
+    width: 600px;
+    height: 420px;
     border-radius: 15px;
-    background-color: #4D4D4D;
+    background-color: white;
     color: white;
 }
 
-.bigContainerBanner {
-    width: 1170px;
-    height: 150px;
+.smallContainerBanner {
+    width: 600px;
+    height: 120px;
     background-color: #C14646;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -16,7 +16,8 @@
     justify-content: center;
 }
 
-.bigContainerBanner h1 {
+.smallContainerBanner h1 {
     font-family: sans-serif;
     font-size: 4rem;
+    margin: auto 0;
 }

@@ -1,14 +1,18 @@
-import React, { Component} from 'react';
-import BigContainer from './../../components/BigContainer';
-import GreenButton from './../../components/GreenButton';
-import RedButton from './../../components/RedButton';
+import React from 'react';
 
-export default class App extends Component {
+import BigContainer from '../../components/BigContainer';
+import MedContainer from '../../components/MediumContainer';
+import SmallContainer from '../../components/SmallContainer';
+import DashBoard from './../DashBoard';
+
+export default class App extends React.Component {
+
   render() {
     return (
       <div>
-        <GreenButton/>
-        <RedButton/>
+        <DashBoard>
+          <SmallContainer />
+        </DashBoard>
       </div>
     );
   }
