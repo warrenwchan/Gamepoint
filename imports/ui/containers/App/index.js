@@ -13,13 +13,9 @@ export default class App extends React.Component {
     return (
       <div>
         <DashBoard>
-<<<<<<< HEAD
-          <QuickGame/>
-=======
           <BigContainer title="Profile">
             <Profile />
           </BigContainer>
->>>>>>> 4b2a11b266b0835838679e1561db68b76ee18299
         </DashBoard>
       </div>
     );
