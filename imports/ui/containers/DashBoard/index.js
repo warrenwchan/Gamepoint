@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
 
-import DashDrawer from './../DashDrawer'
+import DashDrawer from './DashDrawer'
 
 class DashBoard extends Component {
     render() {
