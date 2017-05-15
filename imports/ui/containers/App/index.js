@@ -7,11 +7,8 @@ import {
 } from 'react-router-dom'
 
 // route components
-import BigContainer from '../../components/BigContainer';
-import MedContainer from '../../components/MediumContainer';
-import SmallContainer from '../../components/SmallContainer';
 import Login from './../Login';
-import DashBoard from './../DashBoard';
+import Home from './../Home';
 import Profile from './../Profile';
 import QuickGame from './../QuickGame';
 
@@ -21,7 +18,10 @@ export default class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route path="/" component={DashBoard}></Route>
+          <Route path="/" component={Home}></Route>
+          <Route path="/login" component={Login}></Route>
+          <Route path="/profile" component={Profile}/>
+          <Route path="/quickgame" component={QuickGame}/>
         </Switch>
       </Router>
     );

@@ -1,4 +1,4 @@
-.dashDrawer {
+.menu {
     width: 20vw;
     height: 100vh;
     background-color: #4D4D4D;
@@ -18,11 +18,15 @@
     align-items: center;
 }
 
-.dashContent {
+.menuContent {
     width: 100%;
     height: 92vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.menuContent a {
+    text-decoration: none;
 }
