@@ -4,33 +4,20 @@ import BigContainerContent from './../../containers/BigContainerContent';
 import AddPlayer from './AddPlayer';
 import FriendSearch from './FriendSearch';
 import SearchResult from './SearchResult';
-
-const BigContainer = ({ title, subTitle, children }) => (
-  <div className="bigContainer">
-      <div className="bigContainerBanner">
-          <h1>{title}</h1>
-          <h1>{subTitle}</h1>
-      </div>
-      <div className="bigContent">{children}</div>
-  </div>
-);
+import MedContainer from './../../components/MediumContainer';
 
 class QuickGame extends Component {
     render() {
         return (
-            <div className="quickGame">
-                <BigContainer title="quick game" subTitle="add players">
-                    <BigContainerContent>
-                        <div className="content">
-                            <AddPlayer/>
-                            <div className="results">
-                                <FriendSearch/>
-                                <SearchResult/>
-                            </div>
-                        </div>
-                    </BigContainerContent>
-                </BigContainer>
-            </div>
+            <MedContainer title="Quick Game" subtitle="Add Players">
+                <div className="quickGame">
+                    <AddPlayer/>
+                    <div className="results">
+                        <FriendSearch/>
+                        <SearchResult/>
+                    </div>
+                </div>
+            </MedContainer>
         );
     }
 }

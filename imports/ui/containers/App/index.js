@@ -13,9 +13,7 @@ export default class App extends React.Component {
     return (
       <div>
         <DashBoard>
-          <BigContainer title="Profile">
-            <Profile />
-          </BigContainer>
+            <QuickGame />
         </DashBoard>
       </div>
     );
