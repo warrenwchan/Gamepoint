@@ -18,5 +18,8 @@
 
 .bigContainerBanner h1 {
     font-family: sans-serif;
+    font-weight: bold;
+    align-self: center;
     font-size: 4rem;
+    text-transform: uppercase;
 }
