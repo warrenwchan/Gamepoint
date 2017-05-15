@@ -3,7 +3,9 @@ import React from 'react';
 import BigContainer from '../../components/BigContainer';
 import MedContainer from '../../components/MediumContainer';
 import SmallContainer from '../../components/SmallContainer';
+import BigContainerContent from './../BigContainerContent';
 import DashBoard from './../DashBoard';
+import Profile from './../../components/Profile';
 
 export default class App extends React.Component {
 
@@ -11,7 +13,11 @@ export default class App extends React.Component {
     return (
       <div>
         <DashBoard>
-          <SmallContainer />
+          <BigContainer title="Profile">
+            <BigContainerContent>
+              <Profile />
+            </BigContainerContent>
+          </BigContainer>
         </DashBoard>
       </div>
     );

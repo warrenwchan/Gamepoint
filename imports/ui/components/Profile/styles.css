@@ -1,0 +1,25 @@
+.profileContainer {
+    width: 1170px;
+    height: 650px;
+    display: flex;
+}
+
+.section {
+    width: 33.3%;
+    height: 100%;
+}
+
+.sectionTitle {
+    border-bottom: 3px solid white;
+    margin-bottom: 30px;
+}
+
+.recentGamesSection {
+    border-bottom-left-radius: 15px;
+    background-color: #666666;
+}
+
+.addFriendsSection {
+    border-bottom-right-radius: 15px;
+    background-color: #666666;
+}
