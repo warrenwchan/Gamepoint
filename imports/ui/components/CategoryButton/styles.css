@@ -1,6 +1,6 @@
 .catButton {
-    width: 210px;
-    height: 210px;
+    width: 10vw;
+    height: 10vw;
     border-radius: 8px;
     color: white;
     background-color: #666666;
@@ -14,7 +14,7 @@
 }
 
 .catButton p{
-    font-size: 1.5rem;
+    font-size: 2vmin;
     font-family: sans-serif;
     font-weight: bold;
     text-transform: uppercase;

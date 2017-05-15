@@ -7,7 +7,7 @@ import AddPlayers from './AddPlayers';
 
 const Profile = () => (
     <div className="profileContainer">
-        <div className="section recentGamesSection">
+        <div className="section leftSection">
             <RecentGames
                 title="Recent Games"
             />
@@ -17,7 +17,7 @@ const Profile = () => (
                 title="player 1"
             />
         </div>
-        <div className="section addFriendsSection">
+        <div className="section rightSection">
             <AddPlayers
                 title="Add Players"
              />

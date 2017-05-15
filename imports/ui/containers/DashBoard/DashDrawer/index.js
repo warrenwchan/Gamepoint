@@ -8,6 +8,7 @@ class DashDrawer extends Component {
         return (
             <div className="dashDrawer">
                 <div className="heading">
+                    {/*<img src="./../../../../../public/assets/Asset 1.png" alt="logo"/>*/}
                     <h1>dashboard</h1>
                 </div>
                 <div className="dashContent">
