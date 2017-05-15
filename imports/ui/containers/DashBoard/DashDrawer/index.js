@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
 
-import CategoryButton from './../../components/CategoryButton'
+import CategoryButton from './../../../components/CategoryButton'
 
 class DashDrawer extends Component {
     render() {
