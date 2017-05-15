@@ -1,0 +1,8 @@
+.content{
+  display:flex;
+}
+.results{
+  display:flex;
+  flex-direction: column;
+  height: 50%;
+}

@@ -6,6 +6,7 @@ import SmallContainer from '../../components/SmallContainer';
 import BigContainerContent from './../BigContainerContent';
 import DashBoard from './../DashBoard';
 import Profile from './../../components/Profile';
+import QuickGame from './../QuickGame';
 
 export default class App extends React.Component {
 
@@ -13,11 +14,7 @@ export default class App extends React.Component {
     return (
       <div>
         <DashBoard>
-          <BigContainer title="Profile">
-            <BigContainerContent>
-              <Profile />
-            </BigContainerContent>
-          </BigContainer>
+          <QuickGame/>
         </DashBoard>
       </div>
     );
