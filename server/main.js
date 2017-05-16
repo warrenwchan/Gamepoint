@@ -21,7 +21,8 @@ Meteor.users.allow({
   },
   update(userId, doc, fieldNames, modifer){
     return true;
-    if(doc.profile.friends.find()){
+    if(modifier){
+
     }
   }
 });

@@ -22,18 +22,7 @@ const AddPlayers =({ title }) => {
             </ul>
             <AddPlayerButton onClick={handleClick} />
         </div>
-<<<<<<< HEAD
-        <ul>
-            <li>Player 1</li>
-            <li>Player 2</li>
-            <li>Player 3</li>
-        </ul>
-        <button className="addPlayersButton">+ Add Players</button>
-    </div>
-);
-=======
     );
 };
->>>>>>> 1e8d056f385fb1bab7e7ecf103e6e520ac738eea
 
 export default AddPlayers;
