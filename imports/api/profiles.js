@@ -1,0 +1,11 @@
+import { Mongo } from 'meteor/mongo';
+export const Profiles = new Mongo.Collection('profiles');
+
+// if(Meteor.isServer){
+
+// }
+Meteor.methods({
+'Profiles.addFriend' (){
+
+}
+});

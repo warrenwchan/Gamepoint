@@ -11,3 +11,5 @@ Meteor.startup(() => {
     ReactDOM.render(<App />, document.getElementById('app'));
   });
 });
+//HOW TO ADD FRIENDS TO YO FRIEND LIST
+Meteor.users.update({_id:"3s2hFqCkoQT2S7WSc"}, { $push: { 'profile.friends': "kashdkjahdka12j3"}});
