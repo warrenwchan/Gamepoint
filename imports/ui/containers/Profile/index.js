@@ -21,10 +21,10 @@ const Profile = () => (
                 />
             </div>
             <div className="section rightSection">
-                {/*<AddPlayers
+                <AddPlayers
                     title="Add Players"
-                />*/}
-                <SearchPlayers />
+                />
+                {/*<SearchPlayers />*/}
             </div>
         </div>
     </BigContainer>

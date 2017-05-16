@@ -21,7 +21,6 @@ class App extends Component {
   render() {
     return (
       <Router>
-
           <Home>
               <AccountsUIWrapper />
         {this.props.currentUser ? (
@@ -37,8 +36,6 @@ class App extends Component {
             </div>
         )}
           </Home>
-
-
       </Router>
     );
   }
