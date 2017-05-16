@@ -21,6 +21,19 @@ class AddPlayers extends Component {
             </div>
         );
     };
+<<<<<<< HEAD
+=======
+=======
+            <ul>
+                <li>Player 1</li>
+                <li>Player 2</li>
+                <li>Player 3</li>
+            </ul>
+            <AddPlayerButton onClick={handleClick} />
+        </div>
+    );
+>>>>>>> 4bc2aceaeb05443a50fbd02ddfe888e2475d24d6
+>>>>>>> e88083fcf6a9434aaa2c1cb9ce1fd8b8f9ed7b3a
 };
 
 export default AddPlayers;
