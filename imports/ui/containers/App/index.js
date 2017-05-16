@@ -16,13 +16,6 @@ export default class App extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div>
-        <DashBoard>
-            <QuickGame />
-        </DashBoard>
-      </div>
-=======
       <Router>
         <Home>
           <Switch>
@@ -33,7 +26,6 @@ export default class App extends Component {
           </Switch>
         </Home>
       </Router>
->>>>>>> 6f05e007168fae0381992ed44a6c3f65283dc682
     );
   }
 }
