@@ -9,7 +9,11 @@ Meteor.startup(() => {
       password:'john',
       profile:{
         friends: [],
-        stats:{}
+        stats:{
+          wins: '',
+          losses: '',
+        games:{}
+        }
       }
     });
   }
@@ -22,7 +26,6 @@ Meteor.users.allow({
   update(userId, doc, fieldNames, modifer){
     return true;
     if(modifier){
-
     }
   }
 });

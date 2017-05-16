@@ -22,19 +22,8 @@ class AddPlayers extends Component {
                 </ul>
                 <button onClick={()=> this.handleClick()} className="addPlayersButton">+ Add Players</button>
             </div>
-<<<<<<< HEAD
         );
     };
-=======
-            <ul>
-                <li>Player 1</li>
-                <li>Player 2</li>
-                <li>Player 3</li>
-            </ul>
-            <AddPlayerButton onClick={handleClick} />
-        </div>
-    );
->>>>>>> 4bc2aceaeb05443a50fbd02ddfe888e2475d24d6
 };
 
 export default AddPlayers;
