@@ -36,7 +36,7 @@ class Profile extends Component {
                         />
                     </div>
                     <div className="section rightSection">
-                        <AddPlayers onClick={this.buttonClicked}/>
+                        <AddPlayers title="freinds" onClick={this.buttonClicked}/>
                     </div>
                 </div>
             </BigContainer>
