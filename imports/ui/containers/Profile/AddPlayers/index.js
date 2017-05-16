@@ -11,6 +11,7 @@ const AddPlayers = ({ title }) => (
             <li>Player 2</li>
             <li>Player 3</li>
         </ul>
+        <button className="addPlayersButton">+ Add Players</button>
     </div>
 );
 

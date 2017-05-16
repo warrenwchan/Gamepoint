@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -12,7 +12,7 @@ import Home from './../Home';
 import Profile from './../Profile';
 import QuickGame from './../QuickGame';
 
-export default class App extends React.Component {
+export default class App extends Component {
 
   render() {
     return (
@@ -24,12 +24,14 @@ export default class App extends React.Component {
       </div>
 =======
       <Router>
-        <Switch>
-          <Route path="/" component={Home}></Route>
-          <Route path="/login" component={Login}></Route>
-          <Route path="/profile" component={Profile}/>
-          <Route path="/quickgame" component={QuickGame}/>
-        </Switch>
+        <Home>
+          <Switch>
+            {/*<Route exact path="/" component={Home} />*/}
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/quickgame" component={QuickGame} />
+          </Switch>
+        </Home>
       </Router>
 >>>>>>> 6f05e007168fae0381992ed44a6c3f65283dc682
     );
