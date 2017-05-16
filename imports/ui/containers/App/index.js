@@ -16,13 +16,6 @@ export default class App extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div>
-        <DashBoard>
-            <QuickGame />
-        </DashBoard>
-      </div>
-=======
       <Router>
         <Switch>
           <Route path="/" component={Home}></Route>
@@ -31,7 +24,6 @@ export default class App extends React.Component {
           <Route path="/quickgame" component={QuickGame}/>
         </Switch>
       </Router>
->>>>>>> 6f05e007168fae0381992ed44a6c3f65283dc682
     );
   }
 }
