@@ -1,6 +1,6 @@
 .addPlayers {
   height: 90%;
-  padding: 25px 25px 0 0;
+  padding: 25px 25px 0 25px;
   text-align: right;
   position: relative;
 }
@@ -15,8 +15,5 @@
     position: absolute;
     bottom: 0;
     right: 0;
-<<<<<<< HEAD
-=======
     /*outline: none;*/
->>>>>>> 1e8d056f385fb1bab7e7ecf103e6e520ac738eea
 }

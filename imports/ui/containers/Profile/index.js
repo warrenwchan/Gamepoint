@@ -7,27 +7,41 @@ import Stats from './Stats';
 import AddPlayers from './AddPlayers';
 import SearchPlayers from './SearchPlayers';
 
-const Profile = () => (
-    <BigContainer title="Profile">
-        <div className="profileContainer">
-            <div className="section leftSection">
-                <RecentGames
-                    title="Recent Games"
-                />
-            </div>
-            <div className="section statsSection">
-                <Stats
-                    title="player 1"
-                />
-            </div>
-            <div className="section rightSection">
-                <AddPlayers
-                    title="Add Players"
-                />
-                {/*<SearchPlayers />*/}
-            </div>
-        </div>
-    </BigContainer>
-);
+class Profile extends Component {
+
+    buttonClicked() {
+
+    }
+
+    // buttonClicked() {
+    //     const buttonClicked = props.buttonClicked;
+    //     if (buttonClicked) {
+    //         return <SearchPlayers />
+    //     }
+    //     return <AddPlayers title="Friends" onClick={this.buttonClicked} />;
+    // }
+
+    render() {
+        return (
+            <BigContainer title="Profile">
+                <div className="profileContainer">
+                    <div className="section leftSection">
+                        <RecentGames
+                            title="Recent Games"
+                        />
+                    </div>
+                    <div className="section statsSection">
+                        <Stats
+                            title="player 1"
+                        />
+                    </div>
+                    <div className="section rightSection">
+                        <AddPlayers onClick={this.buttonClicked}/>
+                    </div>
+                </div>
+            </BigContainer>
+        );
+    };
+};
 
 export default Profile;

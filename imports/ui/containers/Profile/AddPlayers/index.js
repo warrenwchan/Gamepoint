@@ -5,9 +5,6 @@ import AddPlayerButton from './../../../components/AddPlayersButton'
 
 class AddPlayers extends Component {
 
-    handleClick() {
-
-    }
 
     render() {
         return (
@@ -20,32 +17,10 @@ class AddPlayers extends Component {
                     <li>Player 2</li>
                     <li>Player 3</li>
                 </ul>
-                <button onClick={()=> this.handleClick()} className="addPlayersButton">+ Add Players</button>
+                <button onClick={()=> this.props.onClick()} className="addPlayersButton">+ Add Players</button>
             </div>
-<<<<<<< HEAD
         );
     };
-=======
-            <ul>
-                <li>Player 1</li>
-                <li>Player 2</li>
-                <li>Player 3</li>
-            </ul>
-            <AddPlayerButton onClick={handleClick} />
-        </div>
-<<<<<<< HEAD
-        <ul>
-            <li>Player 1</li>
-            <li>Player 2</li>
-            <li>Player 3</li>
-        </ul>
-        <button className="addPlayersButton">+ Add Players</button>
-    </div>
-);
-=======
-    );
->>>>>>> 4bc2aceaeb05443a50fbd02ddfe888e2475d24d6
 };
->>>>>>> 1e8d056f385fb1bab7e7ecf103e6e520ac738eea
 
 export default AddPlayers;
