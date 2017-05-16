@@ -22,19 +22,19 @@ class App extends Component {
     return (
       <Router>
           <Home>
-              <AccountsUIWrapper />
-        {this.props.currentUser ? (
-            <Switch>
-              {/*<Route exact path="/" component={Home} />*/}
-              {/*<Route exact path="/login" component={Login} />*/}
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path="/quickgame" component={QuickGame} />
-            </Switch>
-                    ): (
-            <div className="logged-out-message">
-              <p>Please sign in to see your ULTIMATE PING PONG APP.</p>
-            </div>
-        )}
+            <AccountsUIWrapper />
+            {this.props.currentUser ? (
+              <Switch>
+                {/*<Route exact path="/" component={Home} />*/}
+                {/*<Route exact path="/login" component={Login} />*/}
+                <Route exact path="/profile" component={Profile} />
+                <Route exact path="/quickgame" component={QuickGame} />
+              </Switch>
+            ): (
+              <div className="logged-out-message">
+                <p>Please sign in to see your ULTIMATE PING PONG APP.</p>
+              </div>
+            )}
           </Home>
       </Router>
     );

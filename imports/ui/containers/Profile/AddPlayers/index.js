@@ -5,9 +5,6 @@ import AddPlayerButton from './../../../components/AddPlayersButton'
 
 class AddPlayers extends Component {
 
-    handleClick() {
-
-    }
 
     render() {
         return (
@@ -20,7 +17,7 @@ class AddPlayers extends Component {
                     <li>Player 2</li>
                     <li>Player 3</li>
                 </ul>
-                <button onClick={()=> this.handleClick()} className="addPlayersButton">+ Add Players</button>
+                <button onClick={()=> this.props.onClick()} className="addPlayersButton">+ Add Players</button>
             </div>
         );
     };
