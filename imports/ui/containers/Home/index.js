@@ -8,14 +8,12 @@ import {
 } from 'react-router-dom'
 
 import Menu from './Menu';
-import Profile from './../Profile';
-import QuickGame from './../QuickGame';
 
-const Home = () => (
+const Home = ({ children }) => (
     <div className="homeContain">
         <Menu />
         <div className="mainApp">
-
+            { children }
         </div>
     </div>
 );
