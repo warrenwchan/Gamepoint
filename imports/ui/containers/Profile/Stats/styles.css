@@ -1,11 +1,12 @@
 .stats {
-  padding: 25px 0 0 0;
+  height: 100%;
 }
 
 .stats h1 {
+  padding: 25px;
   text-align: center;
-  font-family: sans-serif;
-    font-weight: bold;
-    font-size: 2rem;
-    text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
 }

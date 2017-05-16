@@ -5,7 +5,7 @@ import BigContainer from '../../components/BigContainer';
 import RecentGames from './RecentGames';
 import Stats from './Stats';
 import AddPlayers from './AddPlayers';
-
+import SearchPlayers from './SearchPlayers';
 
 const Profile = () => (
     <BigContainer title="Profile">
@@ -21,9 +21,10 @@ const Profile = () => (
                 />
             </div>
             <div className="section rightSection">
-                <AddPlayers
+                {/*<AddPlayers
                     title="Add Players"
-                />
+                />*/}
+                <SearchPlayers />
             </div>
         </div>
     </BigContainer>

@@ -12,14 +12,12 @@ import Home from './../Home';
 import Profile from './../Profile';
 import QuickGame from './../QuickGame';
 
-export default class App extends Component {
-
+class App extends Component {
   render() {
     return (
       <Router>
         <Home>
           <Switch>
-            {/*<Route exact path="/" component={Home} />*/}
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/quickgame" component={QuickGame} />
@@ -28,4 +26,6 @@ export default class App extends Component {
       </Router>
     );
   }
-}
+};
+
+export default App;
