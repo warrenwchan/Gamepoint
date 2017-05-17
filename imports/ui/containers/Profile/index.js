@@ -8,18 +8,31 @@ import AddPlayers from './AddPlayers';
 import SearchPlayers from './SearchPlayers';
 
 class Profile extends Component {
-
-    buttonClicked() {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            active: true,
+         };
     }
 
-    // buttonClicked() {
-    //     const buttonClicked = props.buttonClicked;
-    //     if (buttonClicked) {
-    //         return <SearchPlayers />
-    //     }
-    //     return <AddPlayers title="Friends" onClick={this.buttonClicked} />;
+    // buttonToggle (active) {
+    //     const bool = !!bool;
+    //     this.setState({
+    //         active: bool
+    //     });
+    //     console.log(this.state.active)
     // }
+
+    toggleFriends () {
+        if (this.state.active === true) {
+            return <AddFriends title="Friends" />;
+        }
+        return <SearchFriends />;
+    }
+
+    hello() {
+        console.log(AddPlayers.value)
+    };
 
     render() {
         return (
@@ -36,7 +49,8 @@ class Profile extends Component {
                         />
                     </div>
                     <div className="section rightSection">
-                        <AddPlayers title="freinds" onClick={this.buttonClicked}/>
+
+                        <AddPlayers title="friends" />
                     </div>
                 </div>
             </BigContainer>
