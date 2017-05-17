@@ -1,0 +1,26 @@
+.selectedPreset{
+  background: #4d4d4d;
+  height:300px;
+  width:300px;
+
+}
+.presetChoices ul li{
+  background: #4d4d4d;
+  height: 140px;
+  width: 140px;
+  margin: .6rem;
+}
+.presetChoices ul{
+  display: flex;
+  flex-wrap: wrap;
+  width: 350px;
+}
+.choices{
+  display:flex;
+  margin-left: 1.3rem;
+  margin-top:.3rem;
+  justify-content: space-around;
+  height: 350px;
+  width: 100%;
+  align-items: center;
+}

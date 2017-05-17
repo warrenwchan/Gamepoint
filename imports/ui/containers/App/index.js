@@ -14,6 +14,7 @@ import Login from './../Login';
 import Home from './../Home';
 import Profile from './../Profile';
 import QuickGame from './../QuickGame';
+import Preset from '../Preset';
 import AccountsUIWrapper from '../../components/AccountsUIWrapper';
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
                 {/*<Route exact path="/login" component={Login} />*/}
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/quickgame" component={QuickGame} />
+                <Route exact path="/quickgame/preset" component={Preset} />
               </Switch>
             ): (
               <div className="logged-out-message">
