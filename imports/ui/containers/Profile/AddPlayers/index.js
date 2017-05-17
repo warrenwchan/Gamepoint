@@ -5,7 +5,6 @@ import AddPlayerButton from './../../../components/AddPlayersButton'
 
 class AddPlayers extends Component {
 
-
     render() {
         return (
             <div className="addPlayers">

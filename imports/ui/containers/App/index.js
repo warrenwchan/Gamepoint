@@ -16,6 +16,7 @@ import Profile from './../Profile';
 import QuickGame from './../QuickGame';
 import Preset from '../Preset';
 import AccountsUIWrapper from '../../components/AccountsUIWrapper';
+import ScoreBoard from '../ScoreBoard';
 
 class App extends Component {
 
@@ -31,6 +32,7 @@ class App extends Component {
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/quickgame" component={QuickGame} />
                 <Route exact path="/quickgame/preset" component={Preset} />
+                <Route exact path="/quickgame/:id/scoreboard" component={ScoreBoard} />
               </Switch>
             ): (
               <div className="logged-out-message">
