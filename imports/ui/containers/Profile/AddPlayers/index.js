@@ -5,10 +5,6 @@ import AddPlayerButton from './../../../components/AddPlayersButton'
 
 class AddPlayers extends Component {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bb988c48428d20bce41a25fd4f4e4494559895ed
     render() {
         return (
             <div className="addPlayers">

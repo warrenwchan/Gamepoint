@@ -10,10 +10,10 @@ Meteor.startup(() => {
       profile:{
         friends: [],
         stats:{
-          wins: '',
-          losses: '',
+          wins: '10',
+          losses: '4',
+        },
         games:{}
-        }
       }
     });
   }

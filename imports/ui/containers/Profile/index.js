@@ -8,7 +8,6 @@ import AddPlayers from './AddPlayers';
 import SearchPlayers from './SearchPlayers';
 
 class Profile extends Component {
-<<<<<<< HEAD
     constructor(props) {
         super(props);
         this.state = {
@@ -34,20 +33,6 @@ class Profile extends Component {
     hello() {
         console.log(AddPlayers.value)
     };
-=======
-
-    buttonClicked() {
-
-    }
-
-    // buttonClicked() {
-    //     const buttonClicked = props.buttonClicked;
-    //     if (buttonClicked) {
-    //         return <SearchPlayers />
-    //     }
-    //     return <AddPlayers title="Friends" onClick={this.buttonClicked} />;
-    // }
->>>>>>> bb988c48428d20bce41a25fd4f4e4494559895ed
 
     render() {
         return (
@@ -64,12 +49,8 @@ class Profile extends Component {
                         />
                     </div>
                     <div className="section rightSection">
-<<<<<<< HEAD
 
                         <AddPlayers title="friends" />
-=======
-                        <AddPlayers title="freinds" onClick={this.buttonClicked}/>
->>>>>>> bb988c48428d20bce41a25fd4f4e4494559895ed
                     </div>
                 </div>
             </BigContainer>
