@@ -10,10 +10,10 @@ Meteor.startup(() => {
       profile:{
         friends: [],
         stats:{
-          wins: '',
-          losses: '',
-        games:{}
-        }
+          win: 4,
+          loss:3
+        },
+        games:[]
       }
     });
   }
@@ -31,5 +31,11 @@ Meteor.users.allow({
 });
 
 Meteor.publish('profiles', () => {
-  return Meteor.users.find({}, { fields: { 'profile.friends': 1, 'profile.stats': 1 }});
+  return Meteor.users.find({}, { fields: { 'profile.friends': 1, 'profile.stats': 1, 'profile.games': 1 }});
 });
+
+// game: {
+//   preset:{},
+//   yourScore:'',
+//   theirScore: ''
+// }
