@@ -8,12 +8,12 @@ class SearchPlayers extends Component {
     render() {
         return (
             <div>
-                <div>
+                <div className="friendsSearch">
                     <button>x</button>
                     <input type="text"/>
                     <GreenButton title="Search"/>
                 </div>
-                <div>
+                <div className="freindsResult">
                     <h1>Results</h1>
                     <p>player 1</p>
                 </div>

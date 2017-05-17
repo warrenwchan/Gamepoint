@@ -1,0 +1,12 @@
+.friendsSearch {
+    height: 100px;
+    background-color: #cccccc;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.freindsResult {
+    background-color: #E6E6E6;
+}
