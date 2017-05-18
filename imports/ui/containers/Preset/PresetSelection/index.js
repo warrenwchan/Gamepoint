@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
 
-const PresetSelection = () => (
+import CategoryButton from './../../../components/CategoryButton';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link
+} from 'react-router-dom'
+
+const PresetSelection = (title) => (
   <div className="choices">
-    <div className="selectedPreset">
-      <h1> 1 VS 1 </h1>
-    </div>
-    <div className="selectedPreset">
-      <h1> 2 VS 2 </h1>
-    </div>
+        <Link to="/quickgame/addplayers">
+          <CategoryButton title={title}/>
+        </Link>
   </div>
 );
 
