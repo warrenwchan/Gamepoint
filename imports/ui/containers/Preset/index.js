@@ -16,13 +16,15 @@ class Preset extends Component {
   render() {
     return (
       <MedContainer title="Quick Game" subtitle="Select Preset">
-        <div className='preset'>
-          <Link to="/quickgame/addplayers">
-            <CategoryButton title='1v1'/>
-          </Link>
-          <Link to="/quickgame/addplayers">
-            <CategoryButton title='2v2'/>
-          </Link>
+        <div>
+          <div className='preset'>
+            <Link to="/quickgame/addplayers">
+              <CategoryButton title='1v1'/>
+            </Link>
+            <Link to="/quickgame/addplayers">
+              <CategoryButton title='2v2'/>
+            </Link>
+          </div>
           <p>Create Presets +</p>
         </div>
       </MedContainer>
