@@ -22,7 +22,6 @@ class Menu extends Component {
                         <Link to="/quickgame"><CategoryButton title="quickgame" /></Link>
                         <Link to="/profile"><CategoryButton title="profile" /></Link>
                         <Link to="/leagues"><CategoryButton title="leagues" /></Link>
-                        <Link to="/logout"><CategoryButton title="logout" /></Link>
                     </div>
                 </Route>
             </div>

@@ -4,7 +4,9 @@ import styles from './styles.css'
 export default class GreenButton extends Component {
   render() {
     return (
-      <button className="greenButton"> {this.props.title} </button>
+      <button className="greenButton" onClick={()=> this.props.onClick()}>
+        {this.props.title}
+      </button>
     );
   }
 }
