@@ -31,7 +31,8 @@ Meteor.users.allow({
 });
 
 Meteor.publish('profiles', () => {
-  return Meteor.users.find({}, { fields: { 'profile.friends': 1, 'profile.stats': 1, 'profile.games': 1 }});
+
+  return Meteor.users.find({}, { fields: { 'emails': 1, 'profile.friends': 1, 'profile.stats': 1, 'profile.games': 1 }});
 });
 
 // game: {

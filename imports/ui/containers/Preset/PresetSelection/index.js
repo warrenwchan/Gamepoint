@@ -4,14 +4,10 @@ import styles from './styles.css';
 const PresetSelection = () => (
   <div className="choices">
     <div className="selectedPreset">
+      <h1> 1 VS 1 </h1>
     </div>
-    <div className="presetChoices">
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+    <div className="selectedPreset">
+      <h1> 2 VS 2 </h1>
     </div>
   </div>
 );
