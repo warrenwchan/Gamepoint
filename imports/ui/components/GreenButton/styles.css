@@ -1,8 +1,8 @@
 .greenButton{
-  width: 110px;
-  height: 40px;
-  border-radius: 15px;
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
   background: #5CAB7D;
   border: 0;
-  color:white;
+  color: white;
 }
