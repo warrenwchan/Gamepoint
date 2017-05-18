@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './styles.css';
 
 import { createContainer } from 'meteor/react-meteor-data';
 import {
@@ -23,9 +24,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-          <Home>
-            <AccountsUIWrapper />
-            {this.props.currentUser ? (
+        <Login>
+          <AccountsUIWrapper />
+          {this.props.currentUser ? (
+            <Home >
               <Switch>
                 {/*<Route exact path="/" component={Home} />*/}
                 {/*<Route exact path="/login" component={Login} />*/}
@@ -34,12 +36,13 @@ class App extends Component {
                 <Route exact path="/quickgame/preset" component={Preset} />
                 <Route exact path="/quickgame/:id/scoreboard" component={ScoreBoard} />
               </Switch>
-            ): (
+            </Home>
+          ): (
               <div className="logged-out-message">
-                <p>Please sign in to see your ULTIMATE PING PONG APP.</p>
+                <h1>GamePoint</h1>
               </div>
-            )}
-          </Home>
+          )}
+        </Login>
       </Router>
     );
   }

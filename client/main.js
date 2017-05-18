@@ -14,9 +14,10 @@ Meteor.startup(() => {
 
 
 //HOW TO ADD FRIENDS TO YO FRIEND LIST
-Meteor.users.update({_id:"3s2hFqCkoQT2S7WSc"}, { $push: { 'profile.friends': "kashdkjahdka12j3"}});
+Meteor.users.update({_id: Meteor.userId() }, { $push: { 'profile.friends': "kashdkjahdka12j3"}});
 // HOW tO INCREASE WIN BY 1
 Meteor.users.update({_id:"o9YQTJB7MZEL3ghx4"}, { $inc: {'profile.stats.win': 1 } } )
 //HOW TO INCREASE LOSS BY 1
 Meteor.users.update({_id:"o9YQTJB7MZEL3ghx4"}, { $inc: {'profile.stats.loss': 1 } } )
 
+let currentUserId = Meteor.userId()

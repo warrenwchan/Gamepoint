@@ -13,21 +13,21 @@ class Profile extends Component {
         this.state = {
             active: true,
          };
+         this.toggleFriends = this.toggleFriends.bind(this);
     }
 
-    // buttonToggle (active) {
-    //     const bool = !!bool;
-    //     this.setState({
-    //         active: bool
-    //     });
-    //     console.log(this.state.active)
-    // }
+    buttonToggle () {
+        this.setState({
+            active: !this.state.active
+        });
+        console.log(this.state.active)
+    }
 
     toggleFriends () {
-        if (this.state.active === true) {
-            return <AddFriends title="Friends" />;
+        if (this.state.active) {
+            return <AddPlayers title="friends" onClick={this.buttonToggle.bind(this)}/>;
         }
-        return <SearchFriends />;
+        return <SearchPlayers />;
     }
 
     hello() {
@@ -49,7 +49,7 @@ class Profile extends Component {
                         />
                     </div>
                     <div className="section rightSection">
-                        <AddPlayers title="freinds" onClick={this.buttonClicked}/>
+                        {this.toggleFriends()}
                     </div>
                 </div>
             </BigContainer>
