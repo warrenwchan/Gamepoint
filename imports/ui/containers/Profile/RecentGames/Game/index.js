@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Game = ({ game, text }) => (
+const Game = ({ game, text, onClick }) => (
     <li className="game">
         {text}
-        <i className="fa fa-times" aria-hidden="true"></i>
+        <button onClick={onClick}>
+            <i className="fa fa-times" aria-hidden="true"></i>
+        </button>
     </li>
 );
 

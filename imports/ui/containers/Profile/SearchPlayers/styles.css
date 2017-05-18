@@ -14,6 +14,14 @@
     flex-direction: column;
 }
 
+.searchInput {
+    margin: 15px 35px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #4d4d4d;
+    outline: none;
+}
+
 .searchExit {
     border: none;
     background-color: transparent;
@@ -28,3 +36,8 @@
     padding: 25px;
     color: #4D4D4D;
 }
+
+.greenButton {
+    margin-left: 150px;
+}
+

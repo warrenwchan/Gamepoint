@@ -4,6 +4,16 @@ import styles from './styles.css';
 import Game from './Game';
 
 export default class RecentGames extends Component {
+    constructor() {
+        super();
+        this.state = {
+
+        }
+    }
+
+    removeGame() {
+        // remove game depends of id of button clicked
+    }
 
     render() {
         return (
@@ -12,7 +22,7 @@ export default class RecentGames extends Component {
                     <h1>{this.props.title}</h1>
                 </div>
                 <ul>
-                    <Game text="GAME 1 12:15 - 05/11/17"/>
+                    <Game text="GAME 1 12:15 - 05/11/17" onClick={}/>
                     <Game text="GAME 2 12:15 - 05/11/17"/>
                     <Game text="GAME 3 12:15 - 05/11/17"/>
                 </ul>
