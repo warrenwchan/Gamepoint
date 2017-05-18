@@ -21,22 +21,16 @@ class Profile extends Component {
         this.setState({
             active: !this.state.active
         });
-        console.log(this.state.active)
     }
 
     toggleFriends () {
         if (this.state.active) {
-            return <AddPlayers title="friends" onClick={this.buttonToggle.bind(this)}/>;
+            return <SearchPlayers onClick={this.buttonToggle.bind(this)} />;
         }
-        return <SearchPlayers onClick={this.buttonToggle.bind(this)} />;
-    }
-
-    username () {
-        return Meteor.user()._id;
+        return <AddPlayers title="friends" onClick={this.buttonToggle.bind(this)}/>;
     }
 
     render() {
-        console.log(this.username)
         return (
             <BigContainer title="Profile">
                 <div className="profileContainer">
