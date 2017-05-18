@@ -2,7 +2,12 @@
   background: #4d4d4d;
   height:300px;
   width:300px;
-
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.selectedPreset h1{
+  font-size: 4rem;
 }
 .presetChoices ul li{
   background: #4d4d4d;
@@ -17,7 +22,7 @@
 }
 .choices{
   display:flex;
-  margin-left: 1.3rem;
+  /*margin-left: 1.3rem;*/
   margin-top:.3rem;
   justify-content: space-around;
   height: 350px;
