@@ -7,13 +7,15 @@ class SearchPlayers extends Component {
     // state = {  }
     render() {
         return (
-            <div>
+            <div className="freindsSections">
                 <div className="friendsSearch">
-                    <button>x</button>
+                    <button className="searchExit" onClick={() => this.props.onClick()}>
+                        <i className="fa fa-times" aria-hidden="true"></i>
+                    </button>
                     <input type="text"/>
                     <GreenButton title="Search"/>
                 </div>
-                <div className="freindsResult">
+                <div className="friendsResult">
                     <h1>Results</h1>
                     <p>player 1</p>
                 </div>

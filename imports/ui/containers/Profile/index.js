@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
+import { createContainer } from 'meteor/react-meteor-data';
 
 import BigContainer from '../../components/BigContainer';
 import RecentGames from './RecentGames';
@@ -27,14 +28,15 @@ class Profile extends Component {
         if (this.state.active) {
             return <AddPlayers title="friends" onClick={this.buttonToggle.bind(this)}/>;
         }
-        return <SearchPlayers />;
+        return <SearchPlayers onClick={this.buttonToggle.bind(this)} />;
     }
 
-    hello() {
-        console.log(AddPlayers.value)
-    };
+    username () {
+        return Meteor.user()._id;
+    }
 
     render() {
+        console.log(this.username)
         return (
             <BigContainer title="Profile">
                 <div className="profileContainer">
@@ -45,7 +47,7 @@ class Profile extends Component {
                     </div>
                     <div className="section statsSection">
                         <Stats
-                            title="player 1"
+                            title="hello"
                         />
                     </div>
                     <div className="section rightSection">
@@ -57,4 +59,11 @@ class Profile extends Component {
     };
 };
 
-export default Profile;
+export default createContainer(() => {
+  Meteor.subscribe('todos');
+
+  return {
+    currentUser: Meteor.user(),
+    currentUserId: Meteor.userId(),
+  };
+}, Profile);
