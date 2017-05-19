@@ -27,8 +27,8 @@ Meteor.startup(() => {
 //   owner: ''
 // });
 
- Meteor.publish('games', function gamesPublication(){
-    return Games.find({ owner: this.userId });
-  });
+//  Meteor.publish('games', function gamesPublication(){
+//     return Games.find({ owner: this.userId });
+//   });
 
-let currentUserId = Meteor.userId()
+// let currentUserId = Meteor.userId()

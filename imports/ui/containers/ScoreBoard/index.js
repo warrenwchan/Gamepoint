@@ -15,7 +15,8 @@ class ScoreBoard extends Component {
       leftTeam: ['John'],
       leftScore: 16,
       rightTeam: ['Warren'],
-      rightScore: 21
+      rightScore: 21,
+      owner: Meteor.userId()
     };
     Meteor.call('games.addgame', mockData);
   }

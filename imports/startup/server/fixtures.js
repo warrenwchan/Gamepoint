@@ -1,6 +1,5 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
-
 import { Games } from './../../api/games';
 
 Meteor.startup(() => {
@@ -25,7 +24,7 @@ Meteor.startup(() => {
       leftScore: 16,
       rightTeam: ['Warren'],
       rightScore: 21,
-      owner: Meteor.userId()
+      owner: this.userId
     });
   }
 });
