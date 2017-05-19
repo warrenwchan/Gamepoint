@@ -11,6 +11,8 @@ import {
   Link
 } from 'react-router-dom'
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 // route components
 import Login from './../Login';
 import Home from './../Home';
@@ -21,33 +23,38 @@ import AccountsUIWrapper from '../../components/AccountsUIWrapper';
 import ScoreBoard from '../ScoreBoard';
 import AddPlayers from '../../containers/QuickGame';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 class App extends Component {
 
   render() {
     console.log(this.props.games);
     return (
-      <Router>
-        <Login>
-          <AccountsUIWrapper />
-          {this.props.currentUser ? (
-            <Home >
-              <Switch>
-                {/*<Route exact path="/" component={Home} />*/}
-                {/*<Route exact path="/login" component={Login} />*/}
-                <Route exact path="/profile" component={Profile} />
-                <Route exact path="/quickgame" component={QuickGame} />
-                <Route exact path="/quickgame/addplayers" component={AddPlayers}/>
-                <Route exact path="/quickgame/presets" component={Preset} />
-                <Route exact path="/quickgame/:id/scoreboard"  component={ScoreBoard} />
-              </Switch>
-            </Home>
-          ): (
-              <div className="logged-out-message">
-                <h1>GamePoint</h1>
-              </div>
-          )}
-        </Login>
-      </Router>
+      <MuiThemeProvider>
+        <Router>
+          <Login>
+            <AccountsUIWrapper />
+            {this.props.currentUser ? (
+              <Home >
+                <Switch>
+                  {/*<Route exact path="/" component={Home} />*/}
+                  {/*<Route exact path="/login" component={Login} />*/}
+                  <Route exact path="/profile" component={Profile} />
+                  <Route exact path="/quickgame" component={QuickGame} />
+                  <Route exact path="/quickgame/addplayers" component={AddPlayers}/>
+                  <Route exact path="/quickgame/presets" component={Preset} />
+                  <Route exact path="/quickgame/:id/scoreboard"  component={ScoreBoard} />
+                </Switch>
+              </Home>
+            ): (
+                <div className="logged-out-message">
+                  <h1>GamePoint</h1>
+                </div>
+            )}
+          </Login>
+        </Router>
+      </MuiThemeProvider>
     );
   }
 }
@@ -58,7 +65,7 @@ App.propTypes = {
 };
 
 export default createContainer(() => {
-  // const handleMeteor.subscribe('profiles');
+  const handleProfiles = Meteor.subscribe('profiles');
   const handleGames = Meteor.subscribe('games');
   const games = Games.find({});
   return{

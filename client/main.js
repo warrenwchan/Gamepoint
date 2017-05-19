@@ -19,13 +19,6 @@ Meteor.startup(() => {
 // Meteor.users.update({_id: Meteor.userId()}, { $inc: {'profile.stats.win': 1 } } )
 // //HOW TO INCREASE LOSS BY 1
 // Meteor.users.update({_id: Meteor.userId()}, { $inc: {'profile.stats.loss': 1 } } )
-// Meteor.games.insert({
-//   leftTeam: [],
-//   rightTeam: [],
-//   leftScore: 0,
-//   rightScore: 0,
-//   owner: ''
-// });
 
 //  Meteor.publish('games', function gamesPublication(){
 //     return Games.find({ owner: this.userId });
