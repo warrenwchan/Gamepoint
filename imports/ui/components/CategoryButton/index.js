@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
 
-const CategoryButton = ({ title }) => (
-  <button className="catButton">
+const CategoryButton = ({ title, single }) => (
+  <button onClick={single} className="catButton">
     <p>{title}</p>
   </button>
 );
