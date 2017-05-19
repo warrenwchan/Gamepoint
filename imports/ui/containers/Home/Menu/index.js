@@ -19,7 +19,7 @@ class Menu extends Component {
                 </div>
                 <Route>
                     <div className="menuContent">
-                        <Link to="/quickgame"><CategoryButton title="quickgame" /></Link>
+                        <Link to="/quickgame/presets"><CategoryButton title="quickgame" /></Link>
                         <Link to="/profile"><CategoryButton title="profile" /></Link>
                         <Link to="/leagues"><CategoryButton title="leagues" /></Link>
                     </div>
