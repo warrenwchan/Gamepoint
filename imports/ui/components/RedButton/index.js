@@ -5,9 +5,9 @@ export default class RedButton extends Component {
 
   render() {
     return (
-      <div>
-          <button className="redButton"> No </button>
-      </div>
+      <button className="redButton" onClick={() => {this.props.onClick()}} >
+        {this.props.title}
+      </button>
     );
   }
 }

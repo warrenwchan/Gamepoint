@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './styles.css';
 
 import GreenButton from './../../../components/GreenButton';
+import SearchResult from './SearchResult';
 
 class SearchPlayers extends Component {
     constructor() {
@@ -11,15 +12,26 @@ class SearchPlayers extends Component {
         };
     }
 
+    // componentDidMount() {
+    //     const friends = Meteor.users.find({}).fetch;
+    // }
+
     updateSearch(event) {
         this.setState({search: event.target.value})
     }
 
-    // addFriend(userName) {
-    //     Meteor.users.update({_id: userId()}, { $push: { 'profile.friends': "userName"}});
-    // }
+    addFriend(userName) {
+        Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': "hello"}});
+    }
+
+    hello() {
+        const friends = Meteor.users.find({}).fetch();
+        console.log(friends);
+    }
+
 
     render() {
+        console.log(this.state.search)
         return (
             <div className="freindsSections">
                 <div className="friendsSearch">
@@ -33,18 +45,14 @@ class SearchPlayers extends Component {
                         onChange={this.updateSearch.bind(this)}
                     />
                     <GreenButton
-                        className="searchButton"
                         title="Search"
+                        onClick={this.hello}
                     />
                 </div>
                 <div className="friendsResult">
                     <h1>Results</h1>
                     <ul id="searchResults">
-                        <li>{this.state.search}
-                            <button className="searchResult">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </button>
-                        </li>
+
                     </ul>
                 </div>
             </div>

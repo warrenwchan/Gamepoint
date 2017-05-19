@@ -12,7 +12,7 @@ export default class RecentGames extends Component {
     }
 
     removeGame() {
-        // remove game depends of id of button clicked
+        game.remove(game._id);
     }
 
     render() {
@@ -22,7 +22,7 @@ export default class RecentGames extends Component {
                     <h1>{this.props.title}</h1>
                 </div>
                 <ul>
-                    <Game text="GAME 1 12:15 - 05/11/17"/>
+                    <Game text="GAME 1 12:15 - 05/11/17" id/>
                     <Game text="GAME 2 12:15 - 05/11/17"/>
                     <Game text="GAME 3 12:15 - 05/11/17"/>
                 </ul>
