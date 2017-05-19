@@ -12,17 +12,23 @@ class SearchPlayers extends Component {
         };
     }
 
+    // componentDidMount() {
+    //     const friends = Meteor.users.find({}).fetch;
+    // }
+
     updateSearch(event) {
         this.setState({search: event.target.value})
     }
 
-    // addFriend(userName) {
-    //     Meteor.users.update({_id: userId()}, { $push: { 'profile.friends': "userName"}});
-    // }
+    addFriend(userName) {
+        Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': "hello"}});
+    }
 
     hello() {
-        console.log(this.state.search)
+        const friends = Meteor.users.find({}).fetch();
+        console.log(friends);
     }
+
 
     render() {
         console.log(this.state.search)

@@ -12,7 +12,7 @@ export default class RecentGames extends Component {
     }
 
     removeGame() {
-        // remove game depends of id of button clicked
+        game.remove(game._id);
     }
 
     render() {
