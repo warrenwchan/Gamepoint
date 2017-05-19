@@ -13,7 +13,9 @@ Meteor.startup(() => {
           win: 4,
           loss:3
         },
-        games:[]
+        games:[
+
+        ]
       }
     });
   }
