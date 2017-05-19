@@ -13,16 +13,32 @@ import {
 } from 'react-router-dom'
 
 class Preset extends Component {
+  constructor(){
+    super();
+    this.state={
+      gameMode:''
+    };
+  }
+
+  single(event){
+    event.preventDefault();
+    console.log('hello')
+    this.setState({});
+  }
+  duo(event){
+    event.preventDefault();
+    this.setState({});
+  }
   render() {
     return (
       <MedContainer title="Quick Game" subtitle="Select Preset">
         <div>
           <div className='preset'>
             <Link to="/quickgame/addplayers">
-              <CategoryButton title='1v1'/>
+              <CategoryButton onClick={this.single} params={{ testValue: 'hiiiiii'}} title='1v1'/>
             </Link>
             <Link to="/quickgame/addplayers">
-              <CategoryButton title='2v2'/>
+              <CategoryButton onClick={this.duo} title='2v2'/>
             </Link>
           </div>
           <p>Create Presets +</p>

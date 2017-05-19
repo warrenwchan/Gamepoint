@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './styles.css';
+import { Games } from './../../../api/games';
 
 import { createContainer } from 'meteor/react-meteor-data';
 import {
@@ -23,6 +24,7 @@ import AddPlayers from '../../containers/QuickGame';
 class App extends Component {
 
   render() {
+    console.log(this.props.games);
     return (
       <Router>
         <Login>
@@ -56,9 +58,12 @@ App.propTypes = {
 };
 
 export default createContainer(() => {
-  Meteor.subscribe('profiles');
+  // const handleMeteor.subscribe('profiles');
+  const handleGames = Meteor.subscribe('games');
+  const games = Games.find({});
   return{
     currentUser: Meteor.user(),
     currentUserId: Meteor.userId(),
+    games: games.fetch()
   };
 }, App)
