@@ -1,0 +1,12 @@
+.quickGame{
+  display:flex;
+}
+.leftSide{
+  width: 50%;
+}
+.rightSide{
+  display:flex;
+  flex-direction: column;
+  height: 50%;
+  width: 50%;
+}

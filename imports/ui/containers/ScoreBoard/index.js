@@ -3,7 +3,6 @@ import BigContainer from '../../components/BigContainer';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import Player from './Player';
 import ScoreCount from './ScoreCount';
 import GameActivity from './GameActivity';
 import GreenButton from './../../components/GreenButton';
@@ -23,7 +22,7 @@ class ScoreBoard extends Component {
   }
 
   render() {
-
+    console.log(this.props.game);
     return (
       <div>
         {
@@ -32,7 +31,7 @@ class ScoreBoard extends Component {
         }
         {
           !!this.props.game &&
-          <BigContainer title="game 1">
+          <BigContainer title="Game">
             <div>
               <ScoreCount
                 gameId={this.props.match.params.id}
@@ -41,7 +40,12 @@ class ScoreBoard extends Component {
                 rightScore={this.props.game.rightScore}
                 rightTeam={this.props.game.rightTeam}
               />
-              <GameActivity/>
+              <GameActivity
+                leftScore={this.props.game.leftScore}
+                leftTeam={this.props.game.leftTeam}
+                rightScore={this.props.game.rightScore}
+                rightTeam={this.props.game.rightTeam}
+              />
               <GreenButton onClick={() => this.handleSubmit() } title='log'/>
             </div>
           </BigContainer>

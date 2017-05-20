@@ -34,10 +34,10 @@ class Preset extends Component {
       <MedContainer title="Quick Game" subtitle="Select Preset">
         <div>
           <div className='preset'>
-            <Link to="/quickgame/addplayers">
+            <Link to="/quickgame/1v1">
               <CategoryButton onClick={this.single} params={{ testValue: 'hiiiiii'}} title='1v1'/>
             </Link>
-            <Link to="/quickgame/addplayers">
+            <Link to="/quickgame/2v2">
               <CategoryButton onClick={this.duo} title='2v2'/>
             </Link>
           </div>

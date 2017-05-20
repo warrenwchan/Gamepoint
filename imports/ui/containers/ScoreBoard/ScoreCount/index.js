@@ -3,7 +3,6 @@ import styles from './styles.css';
 import { Meteor } from 'meteor/meteor';
 import { Games } from './../../../../api/games';
 
-
 class scoreCount extends Component {
   leftIncrement(){
     console.log(this.props.leftTeam[0])

@@ -21,7 +21,8 @@ import QuickGame from './../QuickGame';
 import Preset from '../Preset';
 import AccountsUIWrapper from '../../components/AccountsUIWrapper';
 import ScoreBoard from '../ScoreBoard';
-import AddPlayers from '../../containers/QuickGame';
+import QuickGame1v1 from '../../containers/QuickGame';
+import QuickGame2v2 from '../../containers/QuickGame2v2';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -42,7 +43,8 @@ class App extends Component {
                   {/*<Route exact path="/login" component={Login} />*/}
                   <Route exact path="/profile" component={Profile} />
                   <Route exact path="/quickgame" component={QuickGame} />
-                  <Route exact path="/quickgame/addplayers" component={AddPlayers}/>
+                  <Route exact path="/quickgame/1v1" component={QuickGame1v1}/>
+                  <Route exact path="/quickgame/2v2" component={QuickGame2v2}/>
                   <Route exact path="/quickgame/presets" component={Preset} />
                   <Route exact path="/quickgame/:id/scoreboard"  component={ScoreBoard} />
                 </Switch>
