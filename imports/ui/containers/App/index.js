@@ -17,11 +17,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Login from './../Login';
 import Home from './../Home';
 import Profile from './../Profile';
-import QuickGame from './../QuickGame';
+import QuickGame from './../QuickGame1v1';
 import Preset from '../Preset';
 import AccountsUIWrapper from '../../components/AccountsUIWrapper';
 import ScoreBoard from '../ScoreBoard';
-import QuickGame1v1 from '../../containers/QuickGame';
+import QuickGame1v1 from '../../containers/QuickGame1v1';
 import QuickGame2v2 from '../../containers/QuickGame2v2';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -42,7 +42,7 @@ class App extends Component {
                   {/*<Route exact path="/" component={Home} />*/}
                   {/*<Route exact path="/login" component={Login} />*/}
                   <Route exact path="/profile" component={Profile} />
-                  <Route exact path="/quickgame" component={QuickGame} />
+                  <Route exact path="/quickgame" component={QuickGame1v1} />
                   <Route exact path="/quickgame/1v1" component={QuickGame1v1}/>
                   <Route exact path="/quickgame/2v2" component={QuickGame2v2}/>
                   <Route exact path="/quickgame/presets" component={Preset} />

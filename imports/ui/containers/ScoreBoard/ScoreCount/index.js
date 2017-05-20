@@ -4,6 +4,10 @@ import { Meteor } from 'meteor/meteor';
 import { Games } from './../../../../api/games';
 
 class scoreCount extends Component {
+  constructor(){
+    super();
+    this.state={}
+  }
   leftIncrement(){
     console.log(this.props.leftTeam[0])
     const gameId = this.props.gameId;
@@ -25,8 +29,13 @@ class scoreCount extends Component {
     return (
       <div>
         <div className='players'>
-          <p> {this.props.leftTeam[0]} </p>
-          <p> {this.props.rightTeam[0]} </p>
+          {this.props.leftTeam.filter((person) => {
+            return `${person} `;
+          })}
+          <p> Versus </p>
+          {this.props.rightTeam.filter((person) => {
+            return `${person} `;
+          })}
         </div>
         <div className='scoreBoard'>
           <div>
