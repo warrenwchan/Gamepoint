@@ -15,3 +15,13 @@ Meteor.users.allow({
 Meteor.publish('profiles', () => {
   return Meteor.users.find({}, { fields: { 'emails': 1, 'profile.friends': 1, 'profile.stats': 1, 'profile.games': 1 }});
 });
+
+// Meteor.publish('games', () => {
+//   return Meteor.games.find({}, )
+// })
+
+// game: {
+//   preset:{},
+//   yourScore:'',
+//   theirScore: ''
+// }
