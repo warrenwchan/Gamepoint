@@ -60,7 +60,7 @@ Meteor.publish('profiles', () => {
 });
 
 // Meteor.publish('games', () => {
-//   return Meteor.users.find({})
+//   return Meteor.games.find({}, )
 // })
 
 // game: {

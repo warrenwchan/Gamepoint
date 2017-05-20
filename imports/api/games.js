@@ -12,15 +12,18 @@ if(Meteor.isServer){
 
 Meteor.methods({
 
-'games.addgame' (gameInfo){
-  if (!this.userId){
-    throw new Meteor.Error('not-authorized');
+  'games.addgame' (gameInfo){
+    if (!this.userId){
+      throw new Meteor.Error('not-authorized');
+    }
+    Games.insert({
+      leftTeam: gameInfo.leftTeam,
+      leftScore: gameInfo.leftScore,
+      rightTeam: gameInfo.rightTeam,
+      rightScore: gameInfo.rightScore
+    });
   }
-  Games.insert({
-    leftTeam: gameInfo.leftTeam,
-    leftScore: gameInfo.leftScore,
-    rightTeam: gameInfo.rightTeam,
-    rightScore: gameInfo.rightScore
-  });
-}
+
+
+
 });

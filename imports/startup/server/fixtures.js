@@ -25,7 +25,7 @@ Meteor.startup(() => {
       leftScore: 16,
       rightTeam: ['Warren'],
       rightScore: 21,
-      owner: Meteor.userId()
+      owner: this.userId
     });
   }
 });

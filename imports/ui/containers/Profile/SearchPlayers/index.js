@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
+import { createContainer } from 'meteor/react-meteor-data';
 
 import GreenButton from './../../../components/GreenButton';
 import SearchResult from './SearchResult';
@@ -12,26 +13,26 @@ class SearchPlayers extends Component {
         };
     }
 
-    // componentDidMount() {
-    //     const friends = Meteor.users.find({}).fetch;
-    // }
+    componentDidMount() {
+        // console.log(this.props.allUsers, "hellos")
+    }
 
     updateSearch(event) {
         this.setState({search: event.target.value})
     }
 
     addFriend(userName) {
-        Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': "hello"}});
+        // Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': "hello"}});
     }
 
-    hello() {
-        const friends = Meteor.users.find({}).fetch();
-        console.log(friends);
+    showUsers() {
+        const friends = Meteor.users.find({}, { fields: { 'emails': 1 } }).fetch();
+        console.log(friends[1].emails[0].address);
     }
 
 
     render() {
-        console.log(this.state.search)
+
         return (
             <div className="freindsSections">
                 <div className="friendsSearch">
@@ -60,4 +61,12 @@ class SearchPlayers extends Component {
     }
 }
 
-export default SearchPlayers;
+export default createContainer(() => {
+  Meteor.subscribe('profiles');
+
+  return {
+    allUsers: Meteor.users.find({}, { fields: { 'emails': 1 } }).fetch(),
+    currentUser: Meteor.user(),
+    currentUserId: Meteor.userId(),
+  };
+}, SearchPlayers);

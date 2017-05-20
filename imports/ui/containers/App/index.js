@@ -24,7 +24,7 @@ import AddPlayers from '../../containers/QuickGame';
 class App extends Component {
 
   render() {
-    console.log(this.props.games);
+
     return (
       <Router>
         <Login>
