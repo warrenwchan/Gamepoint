@@ -29,7 +29,7 @@ injectTapEventPlugin();
 class App extends Component {
 
   render() {
-    console.log(this.props.games);
+    // console.log('this is this.props.games', this.props.games);
     return (
       <MuiThemeProvider>
         <Router>
