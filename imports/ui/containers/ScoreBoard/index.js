@@ -19,7 +19,7 @@ class ScoreBoard extends Component {
       rightScore: 21,
       owner: Meteor.userId()
     };
-    Meteor.call('games.addgame', mockData);
+    Meteor.call('games.addGame', mockData);
   }
 
   render() {
@@ -40,7 +40,6 @@ class ScoreBoard extends Component {
                 leftTeam={this.props.game.leftTeam}
                 rightScore={this.props.game.rightScore}
                 rightTeam={this.props.game.rightTeam}
-
               />
               <GameActivity/>
               <GreenButton onClick={() => this.handleSubmit() } title='log'/>
