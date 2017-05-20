@@ -41,7 +41,6 @@ class Preset extends Component {
               <CategoryButton onClick={this.duo} title='2v2'/>
             </Link>
           </div>
-          <p>Create Presets +</p>
         </div>
       </MedContainer>
     );

@@ -7,6 +7,7 @@ import ScoreCount from './ScoreCount';
 import GameActivity from './GameActivity';
 import GreenButton from './../../components/GreenButton';
 import { Games } from './../../../api/games';
+import styles from './styles.css';
 
 class ScoreBoard extends Component {
 
@@ -31,7 +32,7 @@ class ScoreBoard extends Component {
         }
         {
           !!this.props.game &&
-          <BigContainer title="Game">
+          <BigContainer className='scoreBoardContainer' title="Game">
             <div>
               <ScoreCount
                 gameId={this.props.match.params.id}
