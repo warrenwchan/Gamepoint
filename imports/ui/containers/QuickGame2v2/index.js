@@ -20,7 +20,7 @@ class QuickGame extends Gandalf {
     constructor() {
         const fields = [
             {
-                name: 'leftName',
+                name: 'leftName1',
                 component: TextField,
                 validators: ['required'],
                 errorPropName: 'errorText',
@@ -30,7 +30,27 @@ class QuickGame extends Gandalf {
                 debounce: 500,
             },
             {
-                name: 'rightName',
+                name: 'leftName2',
+                component: TextField,
+                validators: ['required'],
+                errorPropName: 'errorText',
+                props: {
+                hintText: 'Team 1',
+                },
+                debounce: 500,
+            },
+            {
+                name: 'rightName1',
+                component: TextField,
+                validators: ['required'],
+                errorPropName: 'errorText',
+                props: {
+                hintText: 'Team 2',
+                },
+                debounce: 300,
+            },
+            {
+                name: 'rightName2',
                 component: TextField,
                 validators: ['required'],
                 errorPropName: 'errorText',
@@ -52,9 +72,9 @@ class QuickGame extends Gandalf {
         if (!data) return;
 
         const game = {
-            leftTeam: [data.leftName],
+            leftTeam: [data.leftName1, data.leftName2],
             leftScore: 0,
-            rightTeam: [data.rightName],
+            rightTeam: [data.rightName1, data.rightName2],
             rightScore: 0
         };
 
@@ -69,8 +89,10 @@ class QuickGame extends Gandalf {
             <MedContainer title="Quick Game" subtitle="Add Players">
                 <div className="quickGame">
                     <div className='leftSide'>
-                        { fields.leftName.element }
-                        { fields.rightName.element }
+                        { fields.leftName1.element }
+                        { fields.leftName2.element }
+                        { fields.rightName1.element }
+                        { fields.rightName2.element }
                         <AddPlayer/>
                     </div>
                     <div className="rightSide">

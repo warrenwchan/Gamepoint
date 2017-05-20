@@ -11,19 +11,41 @@ if(Meteor.isServer){
 }
 
 Meteor.methods({
-
-  'games.addgame' (gameInfo){
+  'games.addGame' (gameInfo){
     if (!this.userId){
       throw new Meteor.Error('not-authorized');
     }
-    Games.insert({
+    return Games.insert({
       leftTeam: gameInfo.leftTeam,
       leftScore: gameInfo.leftScore,
       rightTeam: gameInfo.rightTeam,
-      rightScore: gameInfo.rightScore
+      rightScore: gameInfo.rightScore,
+      owner: this.userId
     });
-  }
-
-
-
+  },
+  'games.leftIncrement' (gameId){
+    if(!this.userId){
+      throw new Meteor.Error('not-authorized');
+    }
+    return Games.update( { _id: gameId }, { $inc: {'leftScore': 1 } } );
+  },
+    'games.leftDecrement' (gameId){
+    if(!this.userId){
+      throw new Meteor.Error('not-authorized');
+    }
+    return Games.update( { _id: gameId }, { $inc: {'leftScore': -1 } } );
+  },
+    'games.rightIncrement' (gameId){
+    if(!this.userId){
+      throw new Meteor.Error('not-authorized');
+    }
+    return Games.update( { _id: gameId }, { $inc: {'rightScore': 1 } } );
+  },
+    'games.rightDecrement' (gameId){
+    if(!this.userId){
+      throw new Meteor.Error('not-authorized');
+    }
+    return Games.update( { _id: gameId }, { $inc: {'rightScore': -1 } } );
+  },
 });
+// Meteor.users.update({_id: Meteor.userId()}, { $inc: {'profile.stats.win': 1 } } )
