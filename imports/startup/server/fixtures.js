@@ -18,13 +18,13 @@ Meteor.startup(() => {
       }
     });
   }
-  if(Games.find().count() === 0 ){
-    Games.insert({
-      leftTeam: ['John'],
-      leftScore: 16,
-      rightTeam: ['Warren'],
-      rightScore: 21,
-      owner: this.userId
-    });
-  }
+  // if(Games.find().count() === 0 ){
+  //   Games.insert({
+  //     leftTeam: ['John'],
+  //     leftScore: 16,
+  //     rightTeam: ['Warren'],
+  //     rightScore: 21,
+  //     owner: this.userId
+  //   });
+  // }
 });

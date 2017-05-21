@@ -30,7 +30,7 @@ class scoreCount extends Component {
       <div>
         <div className='players'>
           {this.props.leftTeam.filter((person) => {
-            return `${person} `;
+            return `<p> ${person} </p>`;
           })}
           <p> Versus </p>
           {this.props.rightTeam.filter((person) => {
