@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Game = ({ game, text, onClick }) => (
+const Game = ({ text, onClick }) => (
     <li className="game">
         {text}
         <button onClick={onClick}>

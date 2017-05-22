@@ -3,6 +3,7 @@ import styles from './styles.css';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import Game from './Game';
+import { Games } from './../../../../api/games'
 
 class RecentGames extends Component {
     constructor() {
@@ -12,15 +13,40 @@ class RecentGames extends Component {
         }
     }
 
+
     removeGame() {
-        game.remove(game._id);
+        console.log('fuck yes')
+        // game.remove(game._id);
     }
 
-    // renderGames () {
-    //     if (this.props.currentUser.profile.games)
-    // }
+    getGames () {
+        if (this.props.games) {
+            return this.props.games
+        } return "No games"
+    }
+
+    matchGames(games) {
+        const matches = [];
+        games.forEach(function(games) {
+            if (games.owner === this.props.currentUserId) {
+                (matches.push( games ))
+            }
+        }, this);
+        return matches
+    }
+
 
     render() {
+
+        const games = this.props.games
+        const matchedIds = this.matchGames(games)
+        const renderGames = matchedIds.map((matchedId, i) =>
+            <Game
+                key={i}
+                text={matchedId._id}
+                onClick={this.removeGame}
+            />
+        )
 
         return (
             <div className="recentGames">
@@ -28,9 +54,7 @@ class RecentGames extends Component {
                     <h1>{this.props.title}</h1>
                 </div>
                 <ul id="gamesList">
-                    {/*<Game text={this.props.currentUser.profile.games} />*/}
-                    <Game text="GAME 2 12:15 - 05/11/17" />
-                    <Game text="GAME 3 12:15 - 05/11/17" />
+                    {renderGames}
                 </ul>
             </div>
         );
@@ -38,13 +62,12 @@ class RecentGames extends Component {
 };
 
 export default createContainer(() => {
-    Meteor.subscribe('profiles');
+    const handleProfiles = Meteor.subscribe('profiles');
+    const handleGames = Meteor.subscribe('games');
+    const games = Games.find({});
     return {
         currentUser: Meteor.user(),
         currentUserId: Meteor.userId(),
-    };
-    Meteor.subscribe('games');
-    return {
-        games: Meteor.games()
+        games: games.fetch()
     };
 },  RecentGames);

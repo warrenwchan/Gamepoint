@@ -14,7 +14,7 @@ class SearchPlayers extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.props.allUsers, "hellos")
+
     }
 
     updateSearch(event) {
@@ -25,13 +25,13 @@ class SearchPlayers extends Component {
         // Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': "hello"}});
     }
 
-    showUsers() {
-        const friends = Meteor.users.find({}, { fields: { 'emails': 1 } }).fetch();
-        console.log(friends[1].emails[0].address);
-    }
-
 
     render() {
+
+        const users = this.props.allUsers
+        const showUsers = users.map((user, i) =>
+            <li key={i} > {user.emails[0].address} </li>
+        )
 
         return (
             <div className="freindsSections">
@@ -53,7 +53,7 @@ class SearchPlayers extends Component {
                 <div className="friendsResult">
                     <h1>Results</h1>
                     <ul id="searchResults">
-
+                        {showUsers}
                     </ul>
                 </div>
             </div>
