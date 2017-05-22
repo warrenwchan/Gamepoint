@@ -30,7 +30,10 @@ class SearchPlayers extends Component {
     render() {
 
         const users = this.props.allUsers
-        const showUsers = users.map((user, i) =>
+        const showUsers = users.filter((user) => {
+            if(user._id !== this.props.currentUserId) {
+                return user;
+            }}).map((user, i) =>
             <Game
                 buttonIcon={<i className="fa fa-plus" aria-hidden="true"></i>}
                 key={i}
