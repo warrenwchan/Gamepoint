@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import ScoreCount from './ScoreCount';
-import GameActivity from './GameActivity';
+// import GameActivity from './GameActivity';
 import GreenButton from './../../components/GreenButton';
 import { Games } from './../../../api/games';
 import styles from './styles.css';
@@ -47,12 +47,12 @@ class ScoreBoard extends Component {
                 rightScore={this.props.game.rightScore}
                 rightTeam={this.props.game.rightTeam}
               />
-              <GameActivity
+{             /* <GameActivity
                 leftScore={this.props.game.leftScore}
                 leftTeam={this.props.game.leftTeam}
                 rightScore={this.props.game.rightScore}
                 rightTeam={this.props.game.rightTeam}
-              />
+              />*/}
               <Link to='/quickgame/presets'>
                 <GreenButton onClick={() => this.handleSubmit() } title='Log Game'/>
               </Link>
