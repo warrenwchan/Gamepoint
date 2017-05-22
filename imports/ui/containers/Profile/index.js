@@ -26,9 +26,9 @@ class Profile extends Component {
 
     toggleFriends () {
         if (this.state.active) {
-            return <AddPlayers title="friends" onClick={this.buttonToggle.bind(this)}/>;
+            return <SearchPlayers onClick={this.buttonToggle.bind(this)} />;
         }
-        return <SearchPlayers onClick={this.buttonToggle.bind(this)} />;
+        return <AddPlayers title="friends" onClick={this.buttonToggle.bind(this)}/>;
     }
 
     winStat () {
