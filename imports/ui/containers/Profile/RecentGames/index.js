@@ -15,7 +15,7 @@ class RecentGames extends Component {
 
 
     removeGame() {
-        console.log('fuck yes')
+        console.log('yes')
         // game.remove(game._id);
     }
 
