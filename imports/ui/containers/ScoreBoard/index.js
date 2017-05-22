@@ -8,18 +8,24 @@ import GameActivity from './GameActivity';
 import GreenButton from './../../components/GreenButton';
 import { Games } from './../../../api/games';
 import styles from './styles.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link
+} from 'react-router-dom'
 
 class ScoreBoard extends Component {
 
   handleSubmit(){
-    const mockData = {
-      leftTeam: ['John'],
-      leftScore: 16,
-      rightTeam: ['Warren'],
-      rightScore: 21,
-      owner: Meteor.userId()
-    };
-    Meteor.call('games.addGame', mockData);
+    console.log('hello');
+    console.log('this.props.game', this.props.game);
+    const leftScore = this.props.game.leftScore;
+    const rightScore = this.props.game.rightScore;
+    const leftWin = this.props.game.leftWin;
+    const gameId = this.props.game._id;
+    (leftScore > rightScore) ?  Meteor.call('games.leftWin', gameId) : Meteor.call('games.rightWin', gameId);
+    (leftScore > rightScore) ? alert(`${leftScore} - ${rightScore}, Left Team Won! Ending Game Now`) : alert(`${leftScore} - ${rightScore}, Right Team Won! Ending Game Now`)
   }
 
   render() {
@@ -47,7 +53,9 @@ class ScoreBoard extends Component {
                 rightScore={this.props.game.rightScore}
                 rightTeam={this.props.game.rightTeam}
               />
-              <GreenButton onClick={() => this.handleSubmit() } title='log'/>
+              <Link to='/quickgame/presets'>
+                <GreenButton onClick={() => this.handleSubmit() } title='Log Game'/>
+              </Link>
             </div>
           </BigContainer>
         }

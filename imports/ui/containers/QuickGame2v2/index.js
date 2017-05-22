@@ -70,12 +70,19 @@ class QuickGame extends Gandalf {
         // If form is invalid, all error messages will show automatically
         // So you can simply exit the function
         if (!data) return;
-
+        const date = new Date();
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour12: true };
+        const currentDate = date.toLocaleDateString('en-US', options);
+        const currentTime = date.toLocaleTimeString('en-US');
+        const recordedTime = `${currentDate} ${currentTime}`;
         const game = {
             leftTeam: [data.leftName1, data.leftName2],
             leftScore: 0,
+            leftWin: false,
             rightTeam: [data.rightName1, data.rightName2],
-            rightScore: 0
+            rightScore: 0,
+            rightWin:false,
+            time: recordedTime
         };
 
         Meteor.call('games.addGame', game, (err, id) => {
