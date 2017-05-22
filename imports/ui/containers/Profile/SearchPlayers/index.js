@@ -4,6 +4,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 import GreenButton from './../../../components/GreenButton';
 import SearchResult from './SearchResult';
+import Game from './../RecentGames/Game';
 
 class SearchPlayers extends Component {
     constructor() {
@@ -22,7 +23,7 @@ class SearchPlayers extends Component {
     }
 
     addFriend(userName) {
-        // Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': "hello"}});
+        Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': userName}});
     }
 
 
@@ -30,7 +31,12 @@ class SearchPlayers extends Component {
 
         const users = this.props.allUsers
         const showUsers = users.map((user, i) =>
-            <li key={i} > {user.emails[0].address} </li>
+            <Game
+                buttonIcon={<i className="fa fa-plus" aria-hidden="true"></i>}
+                key={i}
+                text={user.emails[0].address}
+                onClick={() => (this.addFriend(user.emails[0].address))}
+            />
         )
 
         return (

@@ -18,6 +18,15 @@ class Profile extends Component {
          this.toggleFriends = this.toggleFriends.bind(this);
     }
 
+    componentDidMount() {
+        if (this.props.currentUser.profile) {
+            console.log("yes")
+        } else {
+            Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.stats.wins': 0}});
+            Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.stats.loss': 0}});
+        }
+    }
+
     buttonToggle () {
         this.setState({
             active: !this.state.active
