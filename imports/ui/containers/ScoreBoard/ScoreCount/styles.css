@@ -18,3 +18,26 @@
   display: flex;
   flex-direction: column;
 }
+.arrow{
+  font-size:7rem;
+}
+.scoreBoard h1{
+  font-size:10rem;
+  width: 300px;
+  text-align: center;
+  font-weight: bold;
+}
+.versus{
+  font-size: 7rem;
+  align-items: center;
+}
+.arrows button{
+  border:transparent;
+  background:transparent;
+  color:white;
+  width: 150px;
+}
+.arrows button:focus{
+  outline:none;
+  /*background:red;*/
+}

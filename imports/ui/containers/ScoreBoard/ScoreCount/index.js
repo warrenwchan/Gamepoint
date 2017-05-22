@@ -30,7 +30,7 @@ class scoreCount extends Component {
       <div>
         <div className='players'>
           {this.props.leftTeam.filter((person) => {
-            return `<p> ${person} </p>`;
+            return `<p> ${person}  </p>`;
           })}
           <p> Versus </p>
           {this.props.rightTeam.filter((person) => {
@@ -43,17 +43,17 @@ class scoreCount extends Component {
           </div>
           <div className='scoreMiddle'>
             <div className='arrows'>
-              <button onClick={() => this.leftIncrement()}><i className="fa fa-caret-up fa-lg"></i></button>
-              <button onClick={() => this.leftDecrement()}><i className="fa fa-caret-down fa-lg"></i></button>
+              <button onClick={() => this.leftIncrement()}><i className="fa fa-caret-up fa-lg arrow"></i></button>
+              <button onClick={() => this.leftDecrement()}><i className="fa fa-caret-down fa-lg arrow"></i></button>
             </div>
             <div>
-              <p>
+              <p className='versus'>
                 vs
               </p>
             </div>
             <div className='arrows'>
-              <button onClick={() => this.rightIncrement()}><i className="fa fa-caret-up fa-lg"></i></button>
-              <button onClick={() => this.rightDecrement()}><i className="fa fa-caret-down fa-lg"></i></button>
+              <button onClick={() => this.rightIncrement()}><i className="fa fa-caret-up fa-lg arrow"></i></button>
+              <button onClick={() => this.rightDecrement()}><i className="fa fa-caret-down fa-lg arrow"></i></button>
             </div>
           </div>
           <div>

@@ -1,3 +1,15 @@
 .scoreBoardContainer{
   width: 1000px;
 }
+.loggingSection{
+  display: flex;
+  justify-content: center;
+}
+.greenButton{
+  margin:0;
+}
+.greenButton{
+  font-size: 2rem;
+  width:230px;
+  height: 50px;
+}

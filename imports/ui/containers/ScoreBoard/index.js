@@ -53,9 +53,11 @@ class ScoreBoard extends Component {
                 rightScore={this.props.game.rightScore}
                 rightTeam={this.props.game.rightTeam}
               />*/}
-              <Link to='/quickgame/presets'>
-                <GreenButton onClick={() => this.handleSubmit() } title='Log Game'/>
-              </Link>
+              <div className='loggingSection'>
+                <Link to='/quickgame/presets'>
+                  <GreenButton onClick={() => this.handleSubmit() } title='Log Game'/>
+                </Link>
+              </div>
             </div>
           </BigContainer>
         }
