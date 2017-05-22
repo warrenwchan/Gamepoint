@@ -7,19 +7,22 @@ import AddPlayerButton from './../../../components/AddPlayersButton'
 
 class AddPlayers extends Component {
 
+    removeFriend(friend) {
+        Meteor.users.update({_id: Meteor.userId()}, { $pull: { 'profile.friends': friend}});
+    }
+
     render() {
 
         const friends = this.props.currentUser.profile.friends
 
         const appendFriends = () => {
-            console.log(friends.length)
             if (friends.length) {
                 return friends.map((friend, i) =>
                     <Game
                         buttonIcon={<i className="fa fa-times" aria-hidden="true"></i>}
                         key={i}
                         text={friend}
-
+                        onClick={() => (this.removeFriend(friend))}
                     />
                 )
             } return <li> "no friends" </li>
