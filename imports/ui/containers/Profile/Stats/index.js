@@ -35,7 +35,7 @@ class Stats extends Component {
         const wins = this.props.wins;
         const losses = this.props.losses;
         const percent = Math.round(wins/(wins + losses)*100) + "%";
-
+        console.log(wins)
         return (
             <div className="stats">
                 <h1>{this.props.title}</h1>
