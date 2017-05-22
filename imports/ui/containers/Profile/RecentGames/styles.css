@@ -7,3 +7,8 @@
 .game {
   padding-bottom: 11px;
 }
+
+#gamesList {
+  overflow-y: scroll;
+  height: 450px;
+}

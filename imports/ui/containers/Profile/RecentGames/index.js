@@ -42,8 +42,9 @@ class RecentGames extends Component {
         const matchedIds = this.matchGames(games)
         const renderGames = matchedIds.map((matchedId, i) =>
             <Game
+                buttonIcon={<i className="fa fa-times" aria-hidden="true"></i>}
                 key={i}
-                text={matchedId._id}
+                text={matchedId.time}
                 onClick={this.removeGame}
             />
         )
