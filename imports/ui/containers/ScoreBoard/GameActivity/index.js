@@ -4,7 +4,7 @@ import styles from './styles.css';
 const GameActivity = ({leftScore, leftTeam, rightScore, rightTeam}) => {
   const leftTeamMembers = leftTeam.filter((person) => {
     return <p>{person}</p>
-  })
+  });
   console.log(leftScore, leftTeam);
 
   return (

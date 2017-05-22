@@ -1,14 +1,26 @@
 .preset{
-  height: 100%;
+  height: 450px;
   width: 100%;
   display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.preset a{
+  text-decoration: none;
 }
 .preset p{
   text-align: right;
-  margin-right: 3rem;
-  margin-top:2rem;
 }
 
 .presetButton {
   color: #4d4d4d;
+}
+.preset .catButton{
+  background: #4d4d4d;
+  height: 310px;
+  width: 310px;
+}
+.preset .catButton p{
+  font-size:4rem;
+  letter-spacing: 1rem;
 }
