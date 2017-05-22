@@ -19,7 +19,7 @@ class AddPlayers extends Component {
                         buttonIcon={<i className="fa fa-times" aria-hidden="true"></i>}
                         key={i}
                         text={friend}
-
+                        onClick={console.log('hello')}
                     />
                 )
             } return <li> "no friends" </li>

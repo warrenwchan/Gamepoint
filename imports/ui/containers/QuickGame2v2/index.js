@@ -8,6 +8,7 @@ import MedContainer from './../../components/MediumContainer';
 import GreenButton from './../../components/GreenButton';
 import Gandalf from 'gandalf-validator';
 import TextField from 'material-ui/TextField';
+import AddPlayers from './../../containers/Profile/AddPlayers';
 
 import {
   BrowserRouter as Router,
@@ -104,8 +105,7 @@ class QuickGame extends Gandalf {
                         { fields.rightName2.element }
                     </div>
                     <div className="rightSide">
-                        <FriendSearch/>
-                        <SearchResult/>
+                        <AddPlayers title='Friends'/>
                     </div>
                     <GreenButton onClick={() => this.handleSubmit()} title='done'/>
                 </div>

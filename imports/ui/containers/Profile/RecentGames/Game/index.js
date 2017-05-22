@@ -2,7 +2,7 @@ import React from 'react';
 
 const Game = ({ text, onClick, buttonIcon }) => (
     <li className="game">
-        {text}
+        {text.email}
         <button onClick={onClick}>
             {buttonIcon}
         </button>
