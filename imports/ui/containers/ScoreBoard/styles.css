@@ -8,8 +8,8 @@
 .greenButton{
   margin:0;
 }
-.greenButton{
+.loggingSection .greenButton{
   font-size: 2rem;
-  width:230px;
-  height: 50px;
+  width:210px;
+  height: 60px;
 }

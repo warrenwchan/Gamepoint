@@ -102,7 +102,6 @@ class QuickGame extends Gandalf {
                         { fields.leftName2.element }
                         { fields.rightName1.element }
                         { fields.rightName2.element }
-                        <AddPlayer/>
                     </div>
                     <div className="rightSide">
                         <FriendSearch/>

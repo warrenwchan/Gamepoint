@@ -23,7 +23,10 @@ class SearchPlayers extends Component {
     }
 
     addFriend(userName) {
-        Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': userName}});
+        const userObject = Meteor.users.find({emails:[{ "address" : userName, "verified" : false } ]}).fetch()
+        console.log()
+
+        Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': {email: userName, _id: userObject[0]._id }}});
     }
 
 

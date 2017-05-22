@@ -22,8 +22,8 @@ class Profile extends Component {
         if (this.props.currentUser.profile) {
             console.log("yes")
         } else {
-            Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.stats.wins': 0}});
-            Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.stats.loss': 0}});
+            Meteor.users.update({_id: Meteor.userId()}, { $set: { 'profile.stats.win': 0}});
+            Meteor.users.update({_id: Meteor.userId()}, { $set: { 'profile.stats.loss': 0}});
         }
     }
 
