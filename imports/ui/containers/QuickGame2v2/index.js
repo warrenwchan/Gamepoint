@@ -77,9 +77,11 @@ class QuickGame extends Gandalf {
         const recordedTime = `${currentDate} ${currentTime}`;
         const game = {
             leftTeam: [data.leftName1, data.leftName2],
+            leftTeamId:[],
             leftScore: 0,
             leftWin: false,
             rightTeam: [data.rightName1, data.rightName2],
+            rightTeamId:[],
             rightScore: 0,
             rightWin:false,
             time: recordedTime
