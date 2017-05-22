@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './styles.css';
 import { createContainer } from 'meteor/react-meteor-data';
 
+import Game from './../RecentGames/Game';
 import AddPlayerButton from './../../../components/AddPlayersButton'
 
 class AddPlayers extends Component {
@@ -9,12 +10,19 @@ class AddPlayers extends Component {
     render() {
 
         const friends = this.props.currentUser.profile.friends
+
         const appendFriends = () => {
+            console.log(friends.length)
             if (friends.length) {
-                friends.map((friend, i) =>
-                    <li key={i} > {friend} </li>
+                return friends.map((friend, i) =>
+                    <Game
+                        buttonIcon={<i className="fa fa-times" aria-hidden="true"></i>}
+                        key={i}
+                        text={friend}
+
+                    />
                 )
-            } return <li>no friends</li>
+            } return <li> "no friends" </li>
         };
 
         return (
@@ -23,7 +31,7 @@ class AddPlayers extends Component {
                     <h1>{this.props.title}</h1>
                 </div>
                 <ul>
-                    {appendFriends}
+                    {appendFriends()}
                 </ul>
                 <button onClick={()=> this.props.onClick()} className="addPlayersButton">+ Add Players</button>
             </div>
