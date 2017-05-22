@@ -13,41 +13,43 @@ class RecentGames extends Component {
         }
     }
 
-
-    removeGame() {
-        console.log('yes')
-        // game.remove(game._id);
-    }
-
     getGames () {
         if (this.props.games) {
             return this.props.games
-        } return "No games"
-    }
+        };
+    };
 
-    matchGames(games) {
+    matchGames(gamesList) {
         const matches = [];
-        games.forEach(function(games) {
-            if (games.owner === this.props.currentUserId) {
-                (matches.push( games ))
+        gamesList.map((gamesList) => {
+            if (gamesList.owner === this.props.currentUserId) {
+                (matches.push( gamesList ))
             }
-        }, this);
+        });
         return matches
-    }
+    };
+
+    removeGame(matchedId) {
+        this.props.games.remove(matchedId._id);
+    };
 
 
     render() {
 
-        const games = this.props.games
-        const matchedIds = this.matchGames(games)
+        const gamesList = this.props.games
+        console.log(gamesList, "gamesList")
+
+        const matchedIds = this.matchGames(gamesList)
+        console.log(matchedIds, "matchedIds")
+
         const renderGames = matchedIds.map((matchedId, i) =>
             <Game
                 buttonIcon={<i className="fa fa-times" aria-hidden="true"></i>}
                 key={i}
                 text={matchedId.time}
-                onClick={this.removeGame}
+                onClick={() => (this.removeGame(matchedId))}
             />
-        )
+        );
 
         return (
             <div className="recentGames">
@@ -59,16 +61,17 @@ class RecentGames extends Component {
                 </ul>
             </div>
         );
-    }
+    };
 };
+
 
 export default createContainer(() => {
     const handleProfiles = Meteor.subscribe('profiles');
     const handleGames = Meteor.subscribe('games');
-    const games = Games.find({});
+    const findGames = Games.find({});
     return {
         currentUser: Meteor.user(),
         currentUserId: Meteor.userId(),
-        games: games.fetch()
+        games: findGames.fetch()
     };
 },  RecentGames);

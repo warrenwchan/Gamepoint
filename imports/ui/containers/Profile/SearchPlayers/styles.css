@@ -3,6 +3,7 @@
     border-bottom-right-radius: 10px;
     background-color: #E6E6E6;
     font-family: 'Open Sans', sans-serif;
+    position: relative;
 }
 
 .friendsSearch {
@@ -37,7 +38,22 @@
     color: #4D4D4D;
 }
 
+.friendsResult h1{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10%;
+    color: #4D4D4D;
+}
+
 .greenButton {
     margin-left: 150px;
+}
+
+.selectButton {
+    color: #4D4D4D;
+}
+
+.selectButton :hover{
+    color: #3FA9F5;
 }
 

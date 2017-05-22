@@ -14,10 +14,6 @@ class SearchPlayers extends Component {
         };
     }
 
-    componentDidMount() {
-
-    }
-
     updateSearch(event) {
         this.setState({search: event.target.value})
     }
@@ -44,7 +40,10 @@ class SearchPlayers extends Component {
 
         return (
             <div className="freindsSections">
-                <div className="friendsSearch">
+                <button className="searchExit" onClick={() => this.props.onClick()}>
+                    <i className="fa fa-times" aria-hidden="true"></i>
+                </button>
+                {/*<div className="friendsSearch">
                     <button className="searchExit" onClick={() => this.props.onClick()}>
                         <i className="fa fa-times" aria-hidden="true"></i>
                     </button>
@@ -58,7 +57,7 @@ class SearchPlayers extends Component {
                         title="Search"
                         onClick={this.hello}
                     />
-                </div>
+                </div>*/}
                 <div className="friendsResult">
                     <h1>Results</h1>
                     <ul id="searchResults">
