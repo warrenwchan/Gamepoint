@@ -3,10 +3,28 @@
 }
 .leftSide{
   width: 50%;
+  padding-left: 2rem;
+  padding-top: 1.8rem;
 }
 .rightSide{
   display:flex;
   flex-direction: column;
   height: 50%;
   width: 50%;
+}
+.rightSide .fa{
+  transform: rotate(45deg);
+  width:10px;
+}
+.doneButton{
+  margin-top:1rem;
+}
+.leftSide .greenButton{
+  margin-top: 2rem;
+  height: 75px;
+  width: 200px;
+  font-size:2rem;
+}
+.medContainerBanner{
+  padding-top: 1rem;
 }
