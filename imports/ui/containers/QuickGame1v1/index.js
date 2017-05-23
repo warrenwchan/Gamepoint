@@ -5,12 +5,13 @@ import React, {
 import styles from './styles.css';
 import BigContainerContent from './../../containers/BigContainerContent';
 import AddPlayers from './AddPlayer';
-import FriendSearch from './FriendSearch';
-import SearchResult from './SearchResult';
+// import FriendSearch from './FriendSearch';
+// import SearchResult from './SearchResult';
 import MedContainer from './../../components/MediumContainer';
 import GreenButton from './../../components/GreenButton';
 import Gandalf from 'gandalf-validator';
 import TextField from 'material-ui/TextField';
+import {Meteor} from 'meteor/meteor';
 
 import {
     BrowserRouter as Router,
@@ -29,6 +30,7 @@ class QuickGame extends Gandalf {
                 props: {
                     hintText: 'Team 1',
                 },
+                debounce: 300,
             },
             {
                 name: 'rightName',
@@ -38,25 +40,39 @@ class QuickGame extends Gandalf {
                 props: {
                     hintText: 'Team 2',
                 },
+                debounce: 300,
             }
         ];
         super(fields);
+        this.state={
+            ...this.state,
+            leftNameId:'',
+            rightNameId:''
+        }
     }
     addFriendToGame(friendObject){
-        console.log('friendObject', friendObject);
-        console.log('this.state.fields beginning:', this.state.fields)
+        // console.log('this.state.fields beginning:', this.state.fields)
+        console.log('this.state', this.state);
+        console.log('friendId', friendObject._id);
         if(this.state.fields.leftName.value.length === 0){
             this.setState((prevState) => {
                 return this.pathToSetState(prevState, friendObject.email, 'leftName')
+            });
+            this.setState({
+                leftNameId: friendObject._id
             })
         }else if(this.state.fields.rightName.value.length === 0){
             this.setState((prevState) => {
                 return this.pathToSetState(prevState, friendObject.email, 'rightName')
             })
+            this.setState({
+                rightNameId: friendObject._id
+            })
         }
-        console.log('this.state.fields', this.state.fields)
-
-
+        console.log('state after', this.state)
+        // Meter.call('games.addLeftId', game, leftNameId);
+        // console.log('this.state.fields', this.state.fields)
+        // console.log('this.props add friend', this.props);
     }
     pathToSetState(prevState, email, team){
         return {
@@ -77,12 +93,14 @@ class QuickGame extends Gandalf {
                     }
                 }
     }
-
-
-    handleSubmit() {
-
-        const data = this.getCleanFormData();
+    handleSubmit(friendObject) {
+        // const data = this.getCleanFormData();
+        // console.log('friendObject', friendObject);
+        // console.log('friendObject HandleSubmit', friendObject);
+        const data = this.getFormData();
         console.log('data', data);
+        // console.log('data', data);
+
         // If form is invalid, all error messages will show automatically
         // So you can simply exit the function
         if (!data) return;
@@ -94,13 +112,14 @@ class QuickGame extends Gandalf {
         const game = {
             leftTeam: [data.leftName],
             leftScore: 0,
+            leftTeamIds:[this.state.leftNameId],
             leftWin: false,
             rightTeam: [data.rightName],
             rightScore: 0,
             rightWin: false,
-            time: recordedTime
+            rightTeamIds: [this.state.rightNameId],
         };
-
+        // console.log(this.props);
         Meteor.call('games.addGame', game, (err, id) => {
             const redirectFn = this.props.history.push;
             redirectFn(`/quickgame/${id}/scoreboard`);
@@ -108,9 +127,18 @@ class QuickGame extends Gandalf {
     }
     render() {
         const { fields } = this.state;
-        console.log(fields);
         const friends = this.props.currentUser.profile.friends;
+        // console.log('this.props', this.props.allUsers);
+        // const allUsers = this.props.allUsers;
 
+        // const leftUserObject = this.props.allUsers.filter((user) => {
+        //     console.log(user.emails[0].address );
+        //     if(user.emails[0].address == 'new@new.com'){
+        //         return user._id;
+        //     }
+        // });
+        // console.log('leftUserId', leftUserObject);
+        console.log('currentState', this.state)
         return (
             <MedContainer title = "Quick Game" subtitle = "Add Players" >
                 <div className = "quickGame" >
@@ -122,7 +150,7 @@ class QuickGame extends Gandalf {
                     <AddPlayers
                         title = 'Friends'
                         friends={friends}
-                        friendClick={(friend)=>{this.addFriendToGame(friend)}}
+                        friendClick={(friend) => {this.addFriendToGame(friend)}}
                     />
                 </div>
                     <GreenButton onClick = {() => this.handleSubmit()} title = 'done' />

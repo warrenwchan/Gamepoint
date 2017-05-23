@@ -9,7 +9,7 @@ class scoreCount extends Component {
     this.state={}
   }
   leftIncrement(){
-    console.log(this.props.leftTeam[0])
+    // console.log(this.props.leftTeam[0])
     const gameId = this.props.gameId;
     Meteor.call('games.leftIncrement', gameId);
   }
@@ -36,13 +36,13 @@ class scoreCount extends Component {
     return (
       <div>
         <div className='players'>
-          <p>
+          <p className='playerName'>
             {this.addCommas(this.props.leftTeam).filter((person) => {
               return `${person}`;
             })}
           </p>
           <p> vs </p>
-          <p>
+          <p className='playerName'>
             {this.addCommas(this.props.rightTeam).filter((person) => {
              return `${person} `;
             })}
