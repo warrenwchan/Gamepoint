@@ -12,10 +12,6 @@
   height: 50%;
   width: 50%;
 }
-.rightSide .fa{
-  transform: rotate(45deg);
-  width:10px;
-}
 .doneButton{
   margin-top:1rem;
 }
