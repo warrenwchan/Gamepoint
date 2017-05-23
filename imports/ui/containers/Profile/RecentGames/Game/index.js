@@ -4,7 +4,7 @@ import styles from './styles.css';
 const Game = ({ text, onClick, buttonIcon }) => (
     <li className="game">
         {text}
-        <button onClick={onClick}>
+        <button className="selectButton" onClick={onClick}>
             {buttonIcon}
         </button>
     </li>
