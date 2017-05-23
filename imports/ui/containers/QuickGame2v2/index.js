@@ -169,6 +169,7 @@ class QuickGame extends Gandalf {
                         { fields.leftName2.element }
                         { fields.rightName1.element }
                         { fields.rightName2.element }
+                        <GreenButton className="doneButton" onClick={() => this.handleSubmit()} title='Start Game'/>
                     </div>
                     <div className="rightSide">
                         <AddPlayers
@@ -177,7 +178,7 @@ class QuickGame extends Gandalf {
                             friendClick={(friend) => {this.addFriendToGame(friend)}}
                         />
                     </div>
-                    <GreenButton onClick={() => this.handleSubmit()} title='done'/>
+
                 </div>
             </MedContainer>
         );
