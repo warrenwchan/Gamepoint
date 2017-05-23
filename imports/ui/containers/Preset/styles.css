@@ -1,5 +1,5 @@
 .preset{
-  height: 450px;
+  height: 350px;
   width: 100%;
   display:flex;
   justify-content: space-around;
@@ -17,10 +17,17 @@
 }
 .preset .catButton{
   background: #4d4d4d;
-  height: 280px;
-  width: 280px;
+  height: 300px;
+  width: 300px;
 }
 .preset .catButton p{
+  font-size:3rem;
+  letter-spacing: .8rem;
+}
+
+.preset .catButton p:hover{
   font-size:4rem;
   letter-spacing: 1rem;
+  color: #cccccc;
 }
+

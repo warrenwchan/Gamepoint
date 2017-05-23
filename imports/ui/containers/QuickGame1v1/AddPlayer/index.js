@@ -15,7 +15,7 @@ class AddPlayers extends Component {
             if (friends.length) {
                 return friends.map((friend, i) =>
                     <Game
-                        buttonIcon={<i className="fa fa-times" aria-hidden="true"></i>}
+                        buttonIcon={<i className="fa fa-plus" aria-hidden="true"></i>}
                         key={i}
                         friendObject={friend}
                         onClick={() => (this.props.friendClick(friend))}

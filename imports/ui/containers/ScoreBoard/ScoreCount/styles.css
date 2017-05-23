@@ -1,10 +1,12 @@
 .scoreBoard{
   display:flex;
   justify-content: space-around;
-      height: 400px;
-    align-items: center;
+  height: 400px;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
 }
 .players{
+  font-family: 'Open Sans', sans-serif;
   display:flex;
   justify-content: space-around;
   font-size:2rem;
