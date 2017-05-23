@@ -9,7 +9,7 @@ class AddPlayers extends Component {
 
     componentWillMount() {
         if(!this.props.currentUser.profile.friends) {
-            Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': "No friends yet"}});
+            Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': this.props.currentUserId}});
         }
     }
 

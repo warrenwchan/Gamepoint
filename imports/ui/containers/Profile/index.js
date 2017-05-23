@@ -8,6 +8,7 @@ import RecentGames from './RecentGames';
 import Stats from './Stats';
 import AddPlayers from './AddPlayers';
 import SearchPlayers from './SearchPlayers';
+import { Games } from './../../../api/games'
 
 class Profile extends Component {
     constructor(props) {
@@ -54,6 +55,23 @@ class Profile extends Component {
 
     render() {
 
+        console.log(this.props.games, "game list")
+        console.log(this.props.currentUser, "current user")
+        const gamesList = this.props.games
+
+        const getGameWin = gamesList.map(( games ) => {
+            console.log(games.rightTeam[0], 'right team')
+            console.log(this.props.currentUser.emails[0].address, 'current user email')
+            if ( games.leftTeam[0] === this.props.currentUser.emails[0].address ) {
+                if (games.leftWin === true ) {
+                    return this.props.currentUser.profile.stats.win ++
+                } return this.props.currentUser.profile.stats.loss ++
+            } else if (games.leftScore && games.rightScore === 0) {
+                return this.props.currentUser.profile.stats.loss --
+            }
+        });
+
+
         return (
             <BigContainer title="Profile">
                 <div className="profileContainer">
@@ -79,10 +97,12 @@ class Profile extends Component {
 };
 
 export default createContainer(() => {
-  Meteor.subscribe('profiles');
-
-  return {
-    currentUser: Meteor.user(),
-    currentUserId: Meteor.userId(),
-  };
+    const handleProfiles = Meteor.subscribe('profiles');
+    const handleGames = Meteor.subscribe('games');
+    const findGames = Games.find({});
+    return {
+        currentUser: Meteor.user(),
+        currentUserId: Meteor.userId(),
+        games: findGames.fetch()
+    };
 }, Profile);

@@ -27,7 +27,7 @@ class Stats extends Component {
         if ( wins !== 0 ) {
             return percent;
         }
-         return "0";
+         return "0%";
     }
 
     render() {
@@ -39,18 +39,20 @@ class Stats extends Component {
         return (
             <div className="stats">
                 <h1>{this.props.title}</h1>
-                <div className="statContain">
-                    <div className="stat win">
-                        {this.showWins(wins)}
-                        <p>wins</p>
-                    </div>
-                    <div className="stat loss">
-                        {this.showLoss(losses)}
-                        <p>losses</p>
+                <div className="stat win">
+                    {this.showWins(wins)}
+                    <p>wins</p>
+                </div>
+                <div className="stat loss">
+                    {this.showLoss(losses)}
+                    <p>losses</p>
+                </div>
+                <div className="stat percentage">
+                    <div className="percentShape">
+                        <h2>{this.showPercent(wins, losses, percent)}</h2>
+                        <p>Win Rate</p>
                     </div>
                 </div>
-                <h1>{this.showPercent(wins, losses, percent)}</h1>
-                <div id="container"></div>
             </div>
         );
     };

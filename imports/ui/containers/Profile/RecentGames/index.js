@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './styles.css';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import Game from './Game';
+import GameStat from './RecentGameStat';
 import { Games } from './../../../../api/games'
 
 class RecentGames extends Component {
@@ -33,15 +33,16 @@ class RecentGames extends Component {
     render() {
 
         const gamesList = this.props.games
-        console.log(gamesList, "gamesList")
-
         const matchedIds = this.matchGames(gamesList)
-        console.log(matchedIds, "matchedIds")
 
         const renderGames = matchedIds.map((matchedId, i) =>
-            <Game
+            <GameStat
                 key={i}
-                text={matchedId.time}
+                teamA={matchedId.leftTeam[0]}
+                teamB={matchedId.rightTeam[0]}
+                scoreA={matchedId.leftScore}
+                scoreB={matchedId.rightScore}
+                time={matchedId.time}
             />
         );
 

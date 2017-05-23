@@ -4,6 +4,10 @@
     display: flex;
 }
 
+.bigContainerBanner {
+    background-color: #4ea1d3;
+}
+
 .section {
     width: 33.3%;
     height: 100%;
