@@ -1,12 +1,35 @@
+.medContainerBanner {
+  font-weight: bold;
+}
+
+.medContent{
+    padding: 25px;
+}
+
 .quickGame{
   display:flex;
+  height: 350px;
+  position: relative;
+
 }
+
 .leftSide{
   width: 50%;
 }
+
 .rightSide{
   display:flex;
   flex-direction: column;
   height: 50%;
   width: 50%;
+}
+
+.rightSide .addPlayers {
+  padding: 0;
+}
+
+.greenButton{
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
 }

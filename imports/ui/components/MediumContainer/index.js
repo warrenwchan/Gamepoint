@@ -4,8 +4,8 @@ import styles from './styles.css'
 const MedContainer = ({title, subtitle, children}) => (
   <div className="medContainer">
       <div className="medContainerBanner">
-        <div className="medTitle"><h1>{title}</h1></div>
-        <div className="medSubTitle"><h2>{subtitle}</h2></div>
+        <h1 className="medTitle">{title}</h1>
+        <h2 className="medSubTitle">{subtitle}</h2>
       </div>
       <div className="medContent">{children}</div>
   </div>

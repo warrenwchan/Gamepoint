@@ -23,3 +23,7 @@
     font-size: 3rem;
     text-transform: uppercase;
 }
+
+.bigContent {
+  height: 690px;
+}

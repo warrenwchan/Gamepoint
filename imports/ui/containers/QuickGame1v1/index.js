@@ -145,17 +145,17 @@ class QuickGame extends Gandalf {
         return (
             <MedContainer title = "Quick Game" subtitle = "Add Players" >
                 <div className = "quickGame" >
-                <div className = 'leftSide' >
-                    {fields.leftName.element}
-                    {fields.rightName.element}
-                </div>
-                <div className = "rightSide section" >
-                    <AddPlayers
-                        title = 'Friends'
-                        friends={friends}
-                        friendClick={(friend) => {this.addFriendToGame(friend)}}
-                    />
-                </div>
+                    <div className = 'leftSide' >
+                        {fields.leftName.element}
+                        {fields.rightName.element}
+                    </div>
+                    <div className = "rightSide section" >
+                        <AddPlayers
+                            title = 'Friends'
+                            friends={friends}
+                            friendClick={(friend) => {this.addFriendToGame(friend)}}
+                        />
+                    </div>
                     <GreenButton onClick = {() => this.handleSubmit()} title = 'done' />
                 </div>
             </MedContainer>

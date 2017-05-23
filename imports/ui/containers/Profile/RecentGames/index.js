@@ -35,7 +35,7 @@ class RecentGames extends Component {
         const gamesList = this.props.games
         const matchedIds = this.matchGames(gamesList)
 
-        const renderGames = matchedIds.map((matchedId, i) =>
+        const renderGames = matchedIds.reverse().map((matchedId, i) =>
             <GameStat
                 key={i}
                 teamA={matchedId.leftTeam[0]}
