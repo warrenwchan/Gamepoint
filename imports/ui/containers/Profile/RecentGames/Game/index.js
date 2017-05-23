@@ -3,7 +3,7 @@ import styles from './styles.css';
 
 const Game = ({ text, onClick, buttonIcon }) => (
     <li className="game">
-        {text.email}
+        {text}
         <button onClick={onClick}>
             {buttonIcon}
         </button>

@@ -22,13 +22,12 @@ class AddPlayers extends Component {
         const friends = this.props.currentUser.profile.friends
 
         const appendFriends = () => {
-            console.log(friends.length)
             if (friends.length) {
                 return friends.map((friend, i) =>
                     <Game
                         buttonIcon={<i className="fa fa-times" aria-hidden="true"></i>}
                         key={i}
-                        text={friend}
+                        text={friend.email}
                         onClick={() => (this.removeFriend(friend))}
                     />
                 )
