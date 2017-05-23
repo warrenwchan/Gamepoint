@@ -7,6 +7,12 @@ import AddPlayerButton from './../../../components/AddPlayersButton'
 
 class AddPlayers extends Component {
 
+    componentWillMount() {
+        if(!this.props.currentUser.profile.friends) {
+            Meteor.users.update({_id: Meteor.userId()}, { $push: { 'profile.friends': "No friends yet"}});
+        }
+    }
+
     removeFriend(friend) {
         Meteor.users.update({_id: Meteor.userId()}, { $pull: { 'profile.friends': friend}});
     }
@@ -34,10 +40,10 @@ class AddPlayers extends Component {
                 <div className="sectionTitle">
                     <h1>{this.props.title}</h1>
                 </div>
-                <ul>
+                <ul className="friendsList">
                     {appendFriends()}
                 </ul>
-                <button onClick={()=> this.props.onClick()} className="addPlayersButton">+ Add Players</button>
+                <button onClick={() => this.props.onClick()} className="addPlayersButton">+ Add Players</button>
             </div>
         );
     };

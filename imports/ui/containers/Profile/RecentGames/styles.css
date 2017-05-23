@@ -12,3 +12,11 @@
   overflow-y: scroll;
   height: 450px;
 }
+
+#gamesList .selectButton{
+    color: white;
+}
+
+#gamesList .selectButton :hover{
+    color: #C14646;
+}

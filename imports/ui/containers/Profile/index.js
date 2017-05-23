@@ -18,7 +18,7 @@ class Profile extends Component {
          this.toggleFriends = this.toggleFriends.bind(this);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         if (!this.props.currentUser.profile) {
             Meteor.users.update({_id: Meteor.userId()}, { $set: { 'profile.stats.win': 0}});
             Meteor.users.update({_id: Meteor.userId()}, { $set: { 'profile.stats.loss': 0}});
@@ -33,9 +33,9 @@ class Profile extends Component {
 
     toggleFriends () {
         if (this.state.active) {
-            return <SearchPlayers onClick={this.buttonToggle.bind(this)} />;
+            return <AddPlayers title="friends" onClick={this.buttonToggle.bind(this)}/>;
         }
-        return <AddPlayers title="friends" onClick={this.buttonToggle.bind(this)}/>;
+        return <SearchPlayers onClick={this.buttonToggle.bind(this)} />;
     }
 
     winStat () {
