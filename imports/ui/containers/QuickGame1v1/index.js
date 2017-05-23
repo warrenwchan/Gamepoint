@@ -55,18 +55,20 @@ class QuickGame extends Gandalf {
         console.log('this.state', this.state);
         console.log('friendId', friendObject._id);
         if(this.state.fields.leftName.value.length === 0){
+            this.setState({
+                ...this.state,
+                leftNameId: friendObject._id
+            })
             this.setState((prevState) => {
                 return this.pathToSetState(prevState, friendObject.email, 'leftName')
             });
-            this.setState({
-                leftNameId: friendObject._id
-            })
         }else if(this.state.fields.rightName.value.length === 0){
+            this.setState({
+                ...this.state,
+                rightNameId: friendObject._id
+            })
             this.setState((prevState) => {
                 return this.pathToSetState(prevState, friendObject.email, 'rightName')
-            })
-            this.setState({
-                rightNameId: friendObject._id
             })
         }
         console.log('state after', this.state)

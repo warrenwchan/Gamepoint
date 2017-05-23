@@ -19,19 +19,15 @@ class ScoreBoard extends Component {
 
   handleSubmit(){
     console.log('hello');
-    console.log('this.props.game', this.props.game);
+    console.log('Before', this.props.game);
     const leftScore = this.props.game.leftScore;
     const rightScore = this.props.game.rightScore;
     const leftWin = this.props.game.leftWin;
     const gameId = this.props.game._id;
     (leftScore > rightScore) ?  Meteor.call('games.leftWin', gameId) : Meteor.call('games.rightWin', gameId);
     (leftScore > rightScore) ? alert(`Final Score: ${leftScore} - ${rightScore}, Left Team Won! Returning back to Quick Games! `) : alert(`Final Score: ${leftScore} - ${rightScore}, Right Team Won! Returning back to Quick Games!`);
-    // Meteor.call('games.addLeftIds', gameId, )
+
   }
-  // componentWillMount(){
-  //   const gameId = this.props.game._id;
-  //   console.log('gameId',gameId);
-  // }
 
   render() {
     return (

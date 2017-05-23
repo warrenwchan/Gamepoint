@@ -33,6 +33,7 @@ class scoreCount extends Component {
     })
   }
   render() {
+    console.log()
     return (
       <div>
         <div className='players'>
