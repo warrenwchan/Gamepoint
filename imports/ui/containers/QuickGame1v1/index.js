@@ -120,6 +120,7 @@ class QuickGame extends Gandalf {
             rightScore: 0,
             rightWin: false,
             rightTeamIds: [this.state.rightNameId],
+            time: recordedTime
         };
         // console.log(this.props);
         Meteor.call('games.addGame', game, (err, id) => {

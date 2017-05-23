@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './styles.css';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import Game from './../../../containers/Profile/RecentGames/Game';
+import Game from './Game';
 import AddPlayerButton from './../../../components/AddPlayersButton'
 
 class AddPlayers extends Component {
@@ -17,7 +17,7 @@ class AddPlayers extends Component {
                     <Game
                         buttonIcon={<i className="fa fa-times" aria-hidden="true"></i>}
                         key={i}
-                        text={friend}
+                        friendObject={friend}
                         onClick={() => (this.props.friendClick(friend))}
                     />
                 )
