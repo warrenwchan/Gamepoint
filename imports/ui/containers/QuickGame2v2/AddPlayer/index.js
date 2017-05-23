@@ -25,7 +25,7 @@ class AddPlayers extends Component {
         };
 
         return (
-            <div className="addPlayers">
+            <div className="addPlayers twoPlayer">
                 <div className="sectionTitle">
                     <h1>{this.props.title}</h1>
                 </div>

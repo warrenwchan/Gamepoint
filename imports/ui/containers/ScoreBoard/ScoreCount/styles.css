@@ -12,9 +12,10 @@
   font-size:2rem;
   margin-top: 2rem;
   /*width: 100px;*/
+  /*width: 100%;*/
 }
-.playerName{
-  width:200px;
+.scoreCountName{
+  width:300px;
 }
 .scoreMiddle{
   display: flex;
@@ -47,5 +48,4 @@
 }
 .arrows button:focus{
   outline:none;
-  /*background:red;*/
 }

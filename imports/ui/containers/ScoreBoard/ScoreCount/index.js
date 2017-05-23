@@ -37,13 +37,13 @@ class scoreCount extends Component {
     return (
       <div>
         <div className='players'>
-          <p className='playerName'>
+          <p className='scoreCountName'>
             {this.addCommas(this.props.leftTeam).filter((person) => {
               return `${person}`;
             })}
           </p>
           <p> vs </p>
-          <p className='playerName'>
+          <p className='scoreCountName'>
             {this.addCommas(this.props.rightTeam).filter((person) => {
              return `${person} `;
             })}
