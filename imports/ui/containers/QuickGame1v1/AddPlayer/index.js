@@ -1,13 +1,40 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
-import BigContainerContent from './../../../containers/BigContainerContent';
+import { createContainer } from 'meteor/react-meteor-data';
 
-const AddPlayer = ({ children }) => (
-  <div className="addPlayer">
-      <div>
-            <h1>+ Add Player</h1>
-            <h1>+ Add Player</h1>
-      </div>
-  </div>
-);
-export default AddPlayer;
+import Game from './../../../containers/Profile/RecentGames/Game';
+import AddPlayerButton from './../../../components/AddPlayersButton'
+
+class AddPlayers extends Component {
+
+    render() {
+
+        const friends = this.props.friends
+
+        const appendFriends = () => {
+            if (friends.length) {
+                return friends.map((friend, i) =>
+                    <Game
+                        buttonIcon={<i className="fa fa-times" aria-hidden="true"></i>}
+                        key={i}
+                        text={friend}
+                        onClick={() => (this.props.friendClick(friend))}
+                    />
+                )
+            } return <li> "no friends" </li>
+        };
+
+        return (
+            <div className="addPlayers">
+                <div className="sectionTitle">
+                    <h1>{this.props.title}</h1>
+                </div>
+                <ul>
+                    {appendFriends()}
+                </ul>
+            </div>
+        );
+    };
+};
+
+export default AddPlayers;

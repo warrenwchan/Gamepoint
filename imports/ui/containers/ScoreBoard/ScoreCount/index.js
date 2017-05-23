@@ -25,17 +25,28 @@ class scoreCount extends Component {
     const gameId = this.props.gameId;
     Meteor.call('games.rightDecrement', gameId);
   }
+  addCommas(team){
+    return team.map((element, index) => {
+      if (index === team.length-2){
+        return `${element}, `
+      } return element
+    })
+  }
   render() {
     return (
       <div>
         <div className='players'>
-          {this.props.leftTeam.filter((person) => {
-            return `<p> ${person}  </p>`;
-          })}
-          <p> Versus </p>
-          {this.props.rightTeam.filter((person) => {
-            return `${person} `;
-          })}
+          <p>
+            {this.addCommas(this.props.leftTeam).filter((person) => {
+              return `${person}`;
+            })}
+          </p>
+          <p> vs </p>
+          <p>
+            {this.addCommas(this.props.rightTeam).filter((person) => {
+             return `${person} `;
+            })}
+          </p>
         </div>
         <div className='scoreBoard'>
           <div>
@@ -47,9 +58,6 @@ class scoreCount extends Component {
               <button onClick={() => this.leftDecrement()}><i className="fa fa-caret-down fa-lg arrow"></i></button>
             </div>
             <div>
-              <p className='versus'>
-                vs
-              </p>
             </div>
             <div className='arrows'>
               <button onClick={() => this.rightIncrement()}><i className="fa fa-caret-up fa-lg arrow"></i></button>

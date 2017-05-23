@@ -1,32 +1,33 @@
-import React, { Component } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
+import React, {
+    Component
+} from 'react';
 import styles from './styles.css';
 import BigContainerContent from './../../containers/BigContainerContent';
-import AddPlayer from './AddPlayer';
+import AddPlayers from './AddPlayer';
 import FriendSearch from './FriendSearch';
 import SearchResult from './SearchResult';
 import MedContainer from './../../components/MediumContainer';
 import GreenButton from './../../components/GreenButton';
 import Gandalf from 'gandalf-validator';
 import TextField from 'material-ui/TextField';
-import AddPlayers from './../../containers/Profile/AddPlayers';
 
 import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link
+    BrowserRouter as Router,
+    Route,
+    Switch,
+    Link
 } from 'react-router-dom'
 
 class QuickGame extends Gandalf {
     constructor() {
-        const fields = [
-            {
+        const fields = [{
                 name: 'leftName',
                 component: TextField,
                 validators: ['required'],
                 errorPropName: 'errorText',
                 props: {
-                hintText: 'Team 1',
+                    hintText: 'Team 1',
                 },
                 debounce: 500,
             },
@@ -36,18 +37,53 @@ class QuickGame extends Gandalf {
                 validators: ['required'],
                 errorPropName: 'errorText',
                 props: {
-                hintText: 'Team 2',
+                    hintText: 'Team 2',
                 },
                 debounce: 300,
             }
         ];
         super(fields);
     }
+    addFriendToGame(friendObject){
+        console.log(friendObject);
+        if(this.state.fields.leftName.value.length === 0){
+            this.setState((prevState) => {
+                return this.pathToSetState(prevState, friendObject.email, 'leftName')
+            })
+        }else if(this.state.fields.rightName.value.length === 0){
+            this.setState((prevState) => {
+                return this.pathToSetState(prevState, friendObject.email, 'rightName')
+            })
+        }
+        console.log(this.state.fields.leftName.value.length)
+
+
+    }
+    pathToSetState(prevState, email, team){
+        return {
+                    fields: {
+                        ...prevState.fields,
+                        [team]: {
+                            ...prevState.fields[team],
+                            value: email,
+                            element: {
+                                ...prevState.fields[team].element,
+                                props: {
+                                    ...prevState.fields[team].element.props,
+                                    value: email,
+                                }
+
+                            }
+                        }
+                    }
+                }
+    }
 
 
     handleSubmit() {
-        const data = this.getCleanFormData();
 
+        const data = this.getCleanFormData();
+        console.log(data);
         // If form is invalid, all error messages will show automatically
         // So you can simply exit the function
         if (!data) return;
@@ -73,17 +109,24 @@ class QuickGame extends Gandalf {
     }
     render() {
         const { fields } = this.state;
+        console.log(fields);
+        const friends = this.props.currentUser.profile.friends;
+
         return (
-            <MedContainer title="Quick Game" subtitle="Add Players">
-                <div className="quickGame">
-                    <div className='leftSide'>
-                        { fields.leftName.element }
-                        { fields.rightName.element }
-                    </div>
-                    <div className="rightSide section">
-                        <AddPlayers title='Friends'/>
-                    </div>
-                    <GreenButton onClick={() => this.handleSubmit()} title='done'/>
+            <MedContainer title = "Quick Game" subtitle = "Add Players" >
+                <div className = "quickGame" >
+                <div className = 'leftSide' >
+                    {fields.leftName.element}
+                    {fields.rightName.element}
+                </div>
+                <div className = "rightSide section" >
+                    <AddPlayers
+                        title = 'Friends'
+                        friends={friends}
+                        friendClick={(friend)=>{this.addFriendToGame(friend)}}
+                    />
+                </div>
+                    <GreenButton onClick = {() => this.handleSubmit()} title = 'done' />
                 </div>
             </MedContainer>
         );
@@ -92,4 +135,12 @@ class QuickGame extends Gandalf {
 
 // <Link to="/quickgame/:id/scoreboard"><GreenButton onClick={this.hello} title='done'/></Link>
 
-export default QuickGame;
+export default createContainer(() => {
+  Meteor.subscribe('profiles');
+
+  return {
+    allUsers: Meteor.users.find({}, { fields: { 'emails': 1 } }).fetch(),
+    currentUser: Meteor.user(),
+    currentUserId: Meteor.userId(),
+  };
+}, QuickGame);
