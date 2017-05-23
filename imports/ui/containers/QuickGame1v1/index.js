@@ -29,7 +29,6 @@ class QuickGame extends Gandalf {
                 props: {
                     hintText: 'Team 1',
                 },
-                debounce: 500,
             },
             {
                 name: 'rightName',
@@ -39,13 +38,13 @@ class QuickGame extends Gandalf {
                 props: {
                     hintText: 'Team 2',
                 },
-                debounce: 300,
             }
         ];
         super(fields);
     }
     addFriendToGame(friendObject){
-        console.log(friendObject);
+        console.log('friendObject', friendObject);
+        console.log('this.state.fields beginning:', this.state.fields)
         if(this.state.fields.leftName.value.length === 0){
             this.setState((prevState) => {
                 return this.pathToSetState(prevState, friendObject.email, 'leftName')
@@ -55,7 +54,7 @@ class QuickGame extends Gandalf {
                 return this.pathToSetState(prevState, friendObject.email, 'rightName')
             })
         }
-        console.log(this.state.fields.leftName.value.length)
+        console.log('this.state.fields', this.state.fields)
 
 
     }
@@ -83,7 +82,7 @@ class QuickGame extends Gandalf {
     handleSubmit() {
 
         const data = this.getCleanFormData();
-        console.log(data);
+        console.log('data', data);
         // If form is invalid, all error messages will show automatically
         // So you can simply exit the function
         if (!data) return;
