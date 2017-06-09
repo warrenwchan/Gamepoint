@@ -6,10 +6,12 @@ import { Games } from './../../../../api/games';
 class scoreCount extends Component {
   constructor(){
     super();
-    this.state={}
+    this.state={
+      switch:false
+    }
+    this.handleKeyPress = this.handleKeyPress.bind(this)
   }
   leftIncrement(){
-    // console.log(this.props.leftTeam[0])
     const gameId = this.props.gameId;
     Meteor.call('games.leftIncrement', gameId);
   }
@@ -25,6 +27,24 @@ class scoreCount extends Component {
     const gameId = this.props.gameId;
     Meteor.call('games.rightDecrement', gameId);
   }
+  handleKeyPress(e){
+    e.preventDefault();
+    if(e.keyCode === 81){
+      this.leftIncrement();
+    }else if(e.keyCode === 65){
+      this.leftDecrement();
+    }else if(e.keyCode === 69){
+      this.rightIncrement();
+    }else if (e.keyCode === 68){
+      this.rightDecrement();
+    }
+  }
+  componentDidMount(){
+    document.addEventListener('keydown',this.handleKeyPress);
+  }
+  componentWillUnmount(){
+    document.removeEventListener('keydown',this.handleKeyPress);
+  }
   addCommas(team){
     return team.map((element, index) => {
       if (index === team.length-2){
@@ -33,10 +53,9 @@ class scoreCount extends Component {
     })
   }
   render() {
-    console.log()
     return (
       <div>
-        <div className='players'>
+        <div className={'players'}>
           <p className='scoreCountName'>
             {this.addCommas(this.props.leftTeam).filter((person) => {
               return `${person}`;

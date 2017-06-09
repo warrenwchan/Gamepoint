@@ -64,6 +64,12 @@ Meteor.methods({
       }
       return Games.update({_id: gameId}, {$set: { rightWin: true, leftWin: false }})
     },
+    'games.draw' (gameId){
+      if(!this.userId){
+        throw new Meteor.Error('not-authorized');
+      }
+      return Games.update({_id: gameId}, {$set: { rightWin: false, leftWin: false}})
+    }
     // 'games.addLeftId' (gameId, ){
     //   if(!this.userId){
     //     throw new Meteor.Error('not-authorized');
