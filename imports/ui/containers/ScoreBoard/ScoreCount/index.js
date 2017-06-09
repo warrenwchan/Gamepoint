@@ -27,18 +27,24 @@ class scoreCount extends Component {
     const gameId = this.props.gameId;
     Meteor.call('games.rightDecrement', gameId);
   }
+  toggleSwitch(){
+    this.setState({switch: !this.state.switch})
+  }
   handleKeyPress(e){
     e.preventDefault();
     if(e.keyCode === 81){
-      this.leftIncrement();
+      (this.state.switch) ? this.rightIncrement() : this.leftIncrement();
     }else if(e.keyCode === 65){
-      this.leftDecrement();
+     (this.state.switch) ? this.rightDecrement() : this.leftDecrement();
     }else if(e.keyCode === 69){
-      this.rightIncrement();
+      (this.state.switch) ? this.leftIncrement() : this.rightIncrement();
     }else if (e.keyCode === 68){
-      this.rightDecrement();
+      (this.state.switch) ? this.leftDecrement() : this.rightDecrement();
+    }else if(e.keyCode === 32){
+      this.toggleSwitch();
     }
   }
+
   componentDidMount(){
     document.addEventListener('keydown',this.handleKeyPress);
   }
@@ -55,7 +61,7 @@ class scoreCount extends Component {
   render() {
     return (
       <div>
-        <div className={'players'}>
+        <div className={(this.state.switch) ? 'playersSwitch' : 'players'}>
           <p className='scoreCountName'>
             {this.addCommas(this.props.leftTeam).filter((person) => {
               return `${person}`;
@@ -68,16 +74,14 @@ class scoreCount extends Component {
             })}
           </p>
         </div>
-        <div className='scoreBoard'>
+        <div className={(this.state.switch) ? 'scoreBoardSwitch' : 'scoreBoard'}>
           <div>
             <h1>{this.props.leftScore}</h1>
           </div>
-          <div className='scoreMiddle'>
+          <div className={(this.state.switch) ? 'scoreMiddleSwitch' : 'scoreMiddle'}>
             <div className='arrows'>
               <button onClick={() => this.leftIncrement()}><i className="fa fa-caret-up fa-lg arrow"></i></button>
               <button onClick={() => this.leftDecrement()}><i className="fa fa-caret-down fa-lg arrow"></i></button>
-            </div>
-            <div>
             </div>
             <div className='arrows'>
               <button onClick={() => this.rightIncrement()}><i className="fa fa-caret-up fa-lg arrow"></i></button>
