@@ -10,3 +10,10 @@ How to use:
 Default User Login:
 user: john@john.com
 password: john
+
+Controls:
+Q - Left Team Score +1
+A - Left Team Score -1
+E - Right Team Score +1
+D - Right Team Score -1
+SpaceBar - Team flip sides
