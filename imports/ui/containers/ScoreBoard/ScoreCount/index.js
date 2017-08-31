@@ -7,7 +7,7 @@ class scoreCount extends Component {
   constructor(){
     super();
     this.state={
-      switch:false
+      switch: false
     }
     this.handleKeyPress = this.handleKeyPress.bind(this)
   }
@@ -28,7 +28,7 @@ class scoreCount extends Component {
     Meteor.call('games.rightDecrement', gameId);
   }
   toggleSwitch(){
-    this.setState({switch: !this.state.switch})
+    this.setState({switch: !this.state.switch});
   }
   handleKeyPress(e){
     e.preventDefault();
@@ -44,7 +44,6 @@ class scoreCount extends Component {
       this.toggleSwitch();
     }
   }
-
   componentDidMount(){
     document.addEventListener('keydown',this.handleKeyPress);
   }
